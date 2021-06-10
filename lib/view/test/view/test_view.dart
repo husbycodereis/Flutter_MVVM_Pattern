@@ -11,14 +11,14 @@ import '../../../core/init/lang/language_manager.dart';
 import '../../../core/init/lang/locale_keys.g.dart';
 import '../viewmodel/test_view_model.dart';
 
-class TestWidget extends StatefulWidget {
-  const TestWidget({Key? key}) : super(key: key);
+class TestWiew extends StatefulWidget {
+  const TestWiew({Key? key}) : super(key: key);
 
   @override
-  _TestWidgetState createState() => _TestWidgetState();
+  _TestWiewState createState() => _TestWiewState();
 }
 
-class _TestWidgetState extends BaseState<TestWidget> {
+class _TestWiewState extends BaseState<TestWiew> {
   final StreamController streamController = StreamController();
   late TestViewModel _testViewModel;
 
