@@ -35,13 +35,12 @@ abstract class _TestViewModelBase with Store, BaseViewModel {
 
   @action
   void changeTheme() {
-    Provider.of<ThemeNotifier>(context!, listen: false)
-        .changeValue(AppThemes.DARK);
+    Provider.of<ThemeNotifier>(context!, listen: false).changeTheme();
   }
 
   Future<void> getSampleRequest() async {
     isLoading = true;
-    await  NetworkManager.instance!.dioGet<TestModel>('x', TestModel());
+    await NetworkManager.instance!.dioGet<TestModel>('x', TestModel());
     isLoading = false;
   }
 }

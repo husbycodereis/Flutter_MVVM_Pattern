@@ -1,13 +1,9 @@
 import 'dart:async';
-
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-
 import '../../../core/base/state/base_state.dart';
 import '../../../core/base/view/base_view.dart';
 import '../../../core/extensions/string_extensions.dart';
-import '../../../core/init/lang/language_manager.dart';
 import '../../../core/init/lang/locale_keys.g.dart';
 import '../viewmodel/test_view_model.dart';
 
@@ -54,12 +50,13 @@ class _TestWiewState extends BaseState<TestWiew> {
   }
 
   Widget get buildScaffoldBody => Scaffold(
+        appBar: AppBar(
+          title: Text('Test Widget'),
+        ),
         floatingActionButton: buildFloatingActionButton,
         body: Center(
           child: Column(
             children: [
-              Text(
-                  'LocaleManager.instance.getStringValue(SharedPrefKeys.TOKEN)'),
               SizedBox(
                 height: 20,
               ),
@@ -103,9 +100,9 @@ class _TestWiewState extends BaseState<TestWiew> {
 
   IconButton iconButtonChangeTheme(BuildContext context) {
     return IconButton(
-        icon: Icon(Icons.change_history),
+        icon: Icon(Icons.brightness_5),
         onPressed: () {
-          context.setLocale(LanguageManager.instance!.enLocale);
+          _testViewModel.changeTheme();
         });
   }
 
