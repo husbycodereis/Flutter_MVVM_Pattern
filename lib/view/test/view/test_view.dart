@@ -60,9 +60,22 @@ class _TestWiewState extends BaseState<TestWiew> {
             children: [
               Text(
                   'LocaleManager.instance.getStringValue(SharedPrefKeys.TOKEN)'),
+              SizedBox(
+                height: 20,
+              ),
               buildText,
+              SizedBox(
+                height: 20,
+              ),
+              mailField,
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 children: [textWelcomeWidget(), iconButtonChangeTheme(context)],
+              ),
+              SizedBox(
+                height: 20,
               ),
               Container(
                 width: dynamicWidth(0.8),
@@ -104,4 +117,9 @@ class _TestWiewState extends BaseState<TestWiew> {
   Widget get buildText => Observer(builder: (_) {
         return Text('viewmodeal counter data is ${_testViewModel.counter}');
       });
+}
+
+extension _FormArea on _TestWiewState {
+  TextFormField get mailField =>
+      TextFormField(validator: (value) => value!.isValidEmail);
 }
