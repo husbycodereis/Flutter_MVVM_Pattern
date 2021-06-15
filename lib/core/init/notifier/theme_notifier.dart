@@ -10,15 +10,6 @@ class ThemeNotifier extends ChangeNotifier {
   ThemeData get currentTheme => _currentTheme;
   AppThemes get currenThemeEnum => _currenThemeEnum;
 
-  void changeValue(AppThemes theme) {
-    if (theme == AppThemes.LIGHT) {
-      _currentTheme = ThemeData.light();
-    } else {
-      _currentTheme = ThemeData.dark();
-    }
-    notifyListeners();
-  }
-
   void changeTheme() {
     if (_currenThemeEnum == AppThemes.LIGHT) {
       _currenThemeEnum = AppThemes.DARK;

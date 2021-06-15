@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:folder_architecture/core/base/model/base_view_model.dart';
-import 'package:folder_architecture/core/constants/enums/app_theme_enum.dart';
-import 'package:folder_architecture/core/init/network/network_manager.dart';
+import 'package:folder_architecture/core/constants/enums/http_request_enum.dart';
 import 'package:folder_architecture/core/init/notifier/theme_notifier.dart';
 import 'package:folder_architecture/view/test/model/test_model.dart';
 import 'package:mobx/mobx.dart';
@@ -40,7 +39,11 @@ abstract class _TestViewModelBase with Store, BaseViewModel {
 
   Future<void> getSampleRequest() async {
     isLoading = true;
-    await NetworkManager.instance!.dioGet<TestModel>('x', TestModel());
+    final list = await coreDio!.send<List<TestModel>, TestModel>('x',
+        type: HttpTypes.GET, parseModel: TestModel());
+    if (list is List<TestModel>) {
+      print(true);
+    }
     isLoading = false;
   }
 }
