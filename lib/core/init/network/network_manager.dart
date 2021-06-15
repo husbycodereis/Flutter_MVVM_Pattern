@@ -1,7 +1,5 @@
 
 import 'package:dio/dio.dart';
-
-import '../../base/model/base_error.dart';
 import '../../constants/enums/locale_keys_enum.dart';
 import '../cache/local_manager.dart';
 import 'ICoreDio.dart';

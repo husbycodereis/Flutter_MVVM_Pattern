@@ -7,7 +7,6 @@ import 'package:folder_architecture/core/init/network/network_manager.dart';
 abstract class BaseViewModel {
   BuildContext? context;
 
-  // ICoreDioNullSafety? coreDio = NetworkManager.instance!.;
   // VexanaManager? vexanaManager = VexanaManager.instance;
   LocaleManager localeManager = LocaleManager.instance;
   NavigationService navigation = NavigationService.instance;

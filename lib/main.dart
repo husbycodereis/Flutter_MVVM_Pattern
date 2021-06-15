@@ -7,7 +7,8 @@ import 'package:folder_architecture/core/init/navigation/navigation_routes.dart'
 import 'package:folder_architecture/core/init/navigation/navigation_service.dart';
 import 'package:folder_architecture/core/init/notifier/provider_list.dart';
 import 'package:folder_architecture/core/init/notifier/theme_notifier.dart';
-import 'package:folder_architecture/view/test/view/test_view.dart';
+import 'package:folder_architecture/view/authentication/onboard/view/on_board_view.dart';
+
 import 'package:provider/provider.dart';
 
 void main() {
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,
-        home: TestWiew(),
+        home: OnBoardView(),
       ),
     );
   }
