@@ -43,6 +43,7 @@ class CoreDio with DioMixin implements Dio, ICoreDioNullSafety {
     }
   }
 
+  //example demonstration of R, T  types
   ReturningType returner<ArgumentType, ReturningType>(ArgumentType someType) {
     final dynamic someModel = someType;
     return someModel;
