@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:folder_architecture/core/constants/app/app_constants.dart';
-import 'package:folder_architecture/core/init/cache/local_manager.dart';
+import 'package:folder_architecture/core/init/cache/locale_manager.dart';
 import 'package:folder_architecture/core/init/lang/language_manager.dart';
 import 'package:folder_architecture/core/init/navigation/navigation_routes.dart';
 import 'package:folder_architecture/core/init/navigation/navigation_service.dart';

@@ -1,15 +1,14 @@
 
 import 'package:dio/dio.dart';
 import '../../constants/enums/locale_keys_enum.dart';
-import '../cache/local_manager.dart';
+import '../cache/locale_manager.dart';
 import 'ICoreDio.dart';
 import 'core_dio.dart';
 
 class NetworkManager {
   static NetworkManager? _instance;
   static NetworkManager? get instance {
-    _instance ??= NetworkManager._init();
-    return _instance;
+   return _instance ??= NetworkManager._init();
   }
 
   ICoreDioNullSafety? coreDio;

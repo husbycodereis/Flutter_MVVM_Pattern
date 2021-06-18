@@ -1,3 +1,17 @@
 {
-"welcome": "hello amciks"
+    "welcome": "hello, welcome",
+    "onBoard": {
+        "pageOne": {
+            "title": "Make It Good",
+            "description": "You are not alone. You have unique ability to go to another world."
+        },
+        "pageTwo": {
+            "title": "Make It Good",
+            "description": "You are not alone. You have unique ability to go to another world."
+        },
+        "pageThree": {
+            "title": "Make It Good",
+            "description": "You are not alone. You have unique ability to go to another world."
+        }
+    }
 }

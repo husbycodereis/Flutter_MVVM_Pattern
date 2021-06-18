@@ -18,7 +18,6 @@ class IndicatorListView extends StatefulWidget {
 }
 
 class _IndicatorListViewState extends State<IndicatorListView> {
-  final int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +30,7 @@ class _IndicatorListViewState extends State<IndicatorListView> {
 
   Padding buildPadding(BuildContext context, int index) {
     return Padding(
-        padding: context.paddingLow, child: buildCircleAvatar(index, context));
+        padding: context.paddingLowAll, child: buildCircleAvatar(index, context));
   }
 
   CircleAvatar buildCircleAvatar(int index, BuildContext context) {

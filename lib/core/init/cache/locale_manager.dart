@@ -14,10 +14,21 @@ class LocaleManager {
     instance._preferences ??= await SharedPreferences.getInstance();
   }
 
-  void setStringValue(SharedPrefKeys key, String value) {
-    _preferences!.setString(key.toString(), value);
+  Future<void> clearAll() async {
+    await _preferences!.clear();
+  }
+
+  Future<void> setStringValue(SharedPrefKeys key, String value) async {
+    await _preferences!.setString(key.toString(), value);
+  }
+
+  Future<void> setBoolValue(SharedPrefKeys key, bool value) async {
+    await _preferences!.setBool(key.toString(), value);
   }
 
   String getStringValue(SharedPrefKeys? key) =>
       _preferences!.getString(key.toString()) ?? '';
+
+  bool getBoolValue(SharedPrefKeys? key) =>
+      _preferences!.getBool(key.toString()) ?? false;
 }

@@ -7,13 +7,17 @@ class AppThemeLight extends AppTheme with ILightTheme {
   static AppThemeLight get instance {
     return _instance ??= AppThemeLight._init();
   }
+
   AppThemeLight._init();
 
   ThemeData get theme => ThemeData(
       fontFamily: '',
-      primaryColor: colorThemeLight!.red,
-      accentColor: colorThemeLight!.azure,
+      colorScheme: colorThemeLight!.colorScheme,
+      appBarTheme: appBarTheme(),
       textTheme: textTheme());
+
+  AppBarTheme appBarTheme() =>
+      AppBarTheme(color: colorThemeLight!.colorScheme.primary);
 
   TextTheme textTheme() {
     return TextTheme(

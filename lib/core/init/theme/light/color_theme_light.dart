@@ -17,19 +17,20 @@ class ColorThemeLight {
   final Color darkGray = Color(0xff676870);
   final Color black = Color(0xff020306);
   final Color azure = Color(0xff27928d);
-  
-  // final ColorScheme colorScheme = ColorScheme(
-  //     primary: Colors.black,
-  //     primaryVariant: Colors.white, //xx
-  //     secondary: Colors.green,
-  //     secondaryVariant: Colors.teal,
-  //     surface: Colors.blue, //xx
-  //     background: Color(0xfff6f9fc), //xx
-  //     error: Colors.red[900]!,
-  //     onPrimary: Colors.greenAccent,
-  //     onSecondary: Colors.black, //x
-  //     onSurface: Colors.white30,
-  //     onBackground: Colors.black12,
-  //     onError: Color(0xFFF9B916), //xx
-  //     brightness: Brightness.light);
+  final Color orange = Color(0xffD56B21);
+
+  ColorScheme get colorScheme => ColorScheme(
+      primary: red, //xx
+      primaryVariant: red,
+      secondary: azure, //xx
+      secondaryVariant: orange, //xx
+      surface: Colors.blue,
+      background: white, //xx
+      error: Colors.red[900]!,
+      onPrimary: Colors.greenAccent,
+      onSecondary: Colors.black,
+      onSurface: Colors.white30,
+      onBackground: Colors.black12,
+      onError: Colors.green, 
+      brightness: Brightness.light);
 }

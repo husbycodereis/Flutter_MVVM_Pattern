@@ -11,8 +11,6 @@ import 'package:folder_architecture/core/extensions/network_extensions.dart';
 import 'package:folder_architecture/core/init/network/ICoreDio.dart';
 import 'package:folder_architecture/core/init/network/IResponseModel.dart';
 
-import 'dio_mock_model.dart';
-
 class CoreDioMock with DioMixin implements ICoreDioFullNulSafetyFull, Dio {
   @override
   final BaseOptions options;

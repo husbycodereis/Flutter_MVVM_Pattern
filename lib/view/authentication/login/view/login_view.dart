@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/view/_widgets/button/login_button.dart';
+import 'package:folder_architecture/view/_product/_widgets/button/login_button.dart';
 
 import '../../../../core/base/view/base_view.dart';
 import '../../../../core/extensions/context_extensions.dart';
@@ -21,7 +21,7 @@ class LoginView extends StatelessWidget {
 
   Scaffold buildBody(BuildContext context) => Scaffold(
         body: Padding(
-          padding: context.paddingLow,
+          padding: context.paddingLowAll,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [LoginButton(onComplete: (data) {})],

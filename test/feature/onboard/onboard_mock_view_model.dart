@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:folder_architecture/core/constants/enums/http_request_enum.dart';
+import 'package:folder_architecture/core/constants/enums/locale_keys_enum.dart';
 import 'package:folder_architecture/core/init/network/core_dio.dart';
 import 'package:folder_architecture/view/authentication/onboard/model/on_board_model.dart';
 import 'package:folder_architecture/core/init/network/ICoreDio.dart';
 import 'package:folder_architecture/core/init/navigation/navigation_service.dart';
-import 'package:folder_architecture/core/init/cache/local_manager.dart';
+import 'package:folder_architecture/core/init/cache/locale_manager.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:folder_architecture/view/authentication/onboard/view_model/on_board_view_model.dart';
 
@@ -42,18 +43,19 @@ class OnBoardViewMockModel implements OnBoardViewModel {
     coreDio =
         CoreDio(BaseOptions(baseUrl: "https://jsonplaceholder.typicode.com"));
     stringHelper = MockStringHelper();
+    localeManager = LocaleManager.instance;
   }
 
   @override
   void setContext(BuildContext context) {}
 
   Future<void> onBoardGetModels() async {
-    onBoardItems = [OnBoardModel(text: '1')];
+    onBoardItems = [OnBoardModel(title: '1')];
     final response = await coreDio!.send<List<PostModel>, PostModel>('/posts',
         type: HttpTypes.GET, parseModel: PostModel());
     if (response.data is List) {
       onBoardItems = response.data!
-          .map((e) => OnBoardModel(text: stringHelper.toUpper(e.title!)))
+          .map((e) => OnBoardModel(title: stringHelper.toUpper(e.title!)))
           .toList();
     }
   }
@@ -62,6 +64,16 @@ class OnBoardViewMockModel implements OnBoardViewModel {
     isLoading = true;
     await onBoardGetModels();
     isLoading = false;
+  }
+
+  @override
+  Future<void> completeOnBoard() async {
+    await localeManager.setBoolValue(SharedPrefKeys.IS_FIRST_LOAD, true);
+  }
+
+  @override
+  void changeLoading() {
+    // TODO: implement changeIsLoading
   }
 }
 
