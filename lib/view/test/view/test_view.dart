@@ -7,14 +7,14 @@ import '../../../core/extensions/string_extensions.dart';
 import '../../../core/init/lang/locale_keys.g.dart';
 import '../viewmodel/test_view_model.dart';
 
-class TestWiew extends StatefulWidget {
-  const TestWiew({Key? key}) : super(key: key);
+class TestView extends StatefulWidget {
+  const TestView({Key? key}) : super(key: key);
 
   @override
-  _TestWiewState createState() => _TestWiewState();
+  _TestViewState createState() => _TestViewState();
 }
 
-class _TestWiewState extends BaseState<TestWiew> {
+class _TestViewState extends BaseState<TestView> {
   final StreamController streamController = StreamController();
   late TestViewModel _testViewModel;
 
@@ -116,7 +116,7 @@ class _TestWiewState extends BaseState<TestWiew> {
       });
 }
 
-extension _FormArea on _TestWiewState {
+extension _FormArea on _TestViewState {
   TextFormField get mailField =>
       TextFormField(validator: (value) => value!.isValidEmail);
 }

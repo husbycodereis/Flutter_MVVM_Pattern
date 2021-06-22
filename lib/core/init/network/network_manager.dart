@@ -15,7 +15,7 @@ class NetworkManager {
 
   NetworkManager._init() {
     final baseOptions = BaseOptions(
-        baseUrl: "https://jsonplaceholder.typicode.com/",
+        baseUrl: "https://reqres.in/api",
         headers: {
           "val": LocaleManager.instance.getStringValue(SharedPrefKeys.TOKEN)
         });

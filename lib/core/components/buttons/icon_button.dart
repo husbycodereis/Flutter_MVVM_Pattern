@@ -4,11 +4,11 @@ import 'normal_button.dart';
 
 class NormalIconButton extends StatelessWidget {
   final IconData icon;
-  final VoidCallback? onPressed;
+  final VoidCallback onPressed;
   const NormalIconButton({
     Key? key,
     required this.icon,
-    this.onPressed,
+    required this.onPressed,
   }) : super(key: key);
 
   @override

@@ -63,7 +63,7 @@ abstract class _OnBoardViewModelBase with Store, BaseViewModel {
     changeLoading();
     await localeManager.setBoolValue(SharedPrefKeys.IS_FIRST_LOAD, true);
     navigation.navigateToPageClear(
-      path: NavigationConstants.TEST_VIEW,
+      path: NavigationConstants.LOGIN_VIEW,
     );
     changeLoading();
   }

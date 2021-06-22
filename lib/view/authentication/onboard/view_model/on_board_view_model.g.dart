@@ -65,7 +65,7 @@ mixin _$OnBoardViewModel on _OnBoardViewModelBase, Store {
   @override
   void changeLoading() {
     final _$actionInfo = _$_OnBoardViewModelBaseActionController.startAction(
-        name: '_OnBoardViewModelBase.changeIsLoading');
+        name: '_OnBoardViewModelBase.changeLoading');
     try {
       return super.changeLoading();
     } finally {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folder_architecture/core/components/cards/not_found_navigation.dart';
 import 'package:folder_architecture/core/constants/navigation/navigation_constants.dart';
+import 'package:folder_architecture/view/authentication/login/view/login_view.dart';
 import 'package:folder_architecture/view/test/view/test_view.dart';
 
 class NavigationRoute {
@@ -9,12 +10,12 @@ class NavigationRoute {
 
   NavigationRoute._init();
 
-  
-
   Route<dynamic> generateRoute(RouteSettings args) {
     switch (args.name) {
       case NavigationConstants.TEST_VIEW:
-        return normalNavigate(TestWiew());
+        return normalNavigate(TestView());
+      case NavigationConstants.LOGIN_VIEW:
+        return normalNavigate(LoginView());
 
       default:
         return normalNavigate(NotFoundNavigation());
@@ -25,4 +26,3 @@ class NavigationRoute {
     return MaterialPageRoute(builder: (context) => widget);
   }
 }
-

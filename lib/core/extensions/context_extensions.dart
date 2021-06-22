@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:folder_architecture/core/init/theme/light/color_theme_light.dart';
 
 extension ContextExtension on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
@@ -19,6 +20,7 @@ extension MediaQueryExtension on BuildContext {
 extension ThemeExtension on BuildContext {
   ThemeData get theme => Theme.of(this);
   ColorScheme get colors => theme.colorScheme;
+  ColorThemeLight get customColors => ColorThemeLight.instance!;
   TextTheme get textTheme => theme.textTheme;
 }
 

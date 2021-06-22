@@ -4,7 +4,9 @@ import 'package:flutter_svg/svg.dart';
 
 import 'package:folder_architecture/core/base/view/base_view.dart';
 import 'package:folder_architecture/core/components/text/locale_text.dart';
+import 'package:folder_architecture/core/constants/enums/locale_keys_enum.dart';
 import 'package:folder_architecture/core/extensions/context_extensions.dart';
+import 'package:folder_architecture/core/init/cache/locale_manager.dart';
 import 'package:folder_architecture/view/_product/_widgets/avatar/on_board_circle.dart';
 import 'package:folder_architecture/view/authentication/onboard/model/on_board_model.dart';
 import 'package:folder_architecture/view/authentication/onboard/view_model/on_board_view_model.dart';
@@ -72,8 +74,9 @@ class OnBoardView extends StatelessWidget {
           size: context.height * 0.025,
         ),
         onPressed: () {
-      
-          viewModel.completeOnBoard();
+          print(LocaleManager.instance
+              .getBoolValue(SharedPrefKeys.IS_FIRST_LOAD));
+          // viewModel.completeOnBoard();
         });
   }
 

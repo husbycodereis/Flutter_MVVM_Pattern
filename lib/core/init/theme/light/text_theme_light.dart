@@ -21,4 +21,8 @@ class TextThemeLight {
       TextStyle(fontSize: 18, fontWeight: FontWeight.w400, letterSpacing: 0.25);
   final TextStyle overline =
       TextStyle(fontSize: 10, fontWeight: FontWeight.w400, letterSpacing: 1.5);
+  final TextStyle bodyText1 =
+      TextStyle(fontSize: 16, fontWeight: FontWeight.w500, letterSpacing: 0.5);
+  final TextStyle bodyText2 =
+      TextStyle(fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.25);
 }
