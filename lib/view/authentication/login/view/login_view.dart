@@ -72,8 +72,8 @@ class LoginView extends StatelessWidget {
             labelStyle: context.textTheme.bodyText1,
             labelColor: context.customColors.black,
             tabs: [
-              Tab(icon: Text(LocaleKeys.login_tabOne.tr())),
-              Tab(icon: Text(LocaleKeys.login_tabTwo.tr()))
+              Tab(icon: Text(LocaleKeys.login_tabOne.locale)),
+              Tab(icon: Text(LocaleKeys.login_tabTwo.locale))
             ]),
       ),
     );
@@ -111,7 +111,7 @@ class LoginView extends StatelessWidget {
       controller: viewModel.emailController,
       validator: (value) => value!.isValidEmail,
       decoration: InputDecoration(
-          labelText: LocaleKeys.login_email.tr(),
+          labelText: LocaleKeys.login_email.locale,
           icon: buildContainerIconField(context, Icons.email)),
     );
   }
@@ -122,7 +122,7 @@ class LoginView extends StatelessWidget {
         return TextFormField(
           controller: viewModel.passwordController,
           validator: (value) =>
-              value!.isNotEmpty ? null : LocaleKeys.login_passwordEnter.tr(),
+              value!.isNotEmpty ? null : LocaleKeys.login_passwordEnter.locale,
           obscureText: viewModel.isLockOpen,
           decoration: InputDecoration(
               suffix: GestureDetector(
@@ -131,7 +131,7 @@ class LoginView extends StatelessWidget {
                     : Icons.remove_red_eye),
                 onTap: () => viewModel.isLockStateChange(),
               ),
-              labelText: LocaleKeys.login_password.tr(),
+              labelText: LocaleKeys.login_password.locale,
               icon: buildContainerIconField(context, Icons.lock)),
         );
       });
@@ -148,7 +148,7 @@ class LoginView extends StatelessWidget {
 
   Widget buildForgotPassword() => Align(
       alignment: Alignment.centerRight,
-      child: Text(LocaleKeys.login_forgot.tr()));
+      child: Text(LocaleKeys.login_forgot.locale));
 
   Widget buildLoginButton(BuildContext context, LoginViewModel viewModel) {
     return Observer(builder: (_) {
@@ -165,7 +165,7 @@ class LoginView extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           primary: context.colors.secondary,
           shape: StadiumBorder(),
-          padding: context.paddingNormalAll * 2,
+          padding: context.paddingMediumAll,
         ),
       );
     });

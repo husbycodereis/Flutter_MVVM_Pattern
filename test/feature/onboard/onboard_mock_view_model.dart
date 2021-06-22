@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:folder_architecture/core/constants/enums/http_request_enum.dart';
 import 'package:folder_architecture/core/constants/enums/locale_keys_enum.dart';
 import 'package:folder_architecture/core/init/network/core_dio.dart';
+import 'package:folder_architecture/core/init/network/vexana_manager.dart';
 import 'package:folder_architecture/view/authentication/onboard/model/on_board_model.dart';
 import 'package:folder_architecture/core/init/network/ICoreDio.dart';
 import 'package:folder_architecture/core/init/navigation/navigation_service.dart';
@@ -31,6 +32,9 @@ class OnBoardViewMockModel implements OnBoardViewModel {
   late NavigationService navigation;
 
   @override
+  VexanaManager? vexanaManager;
+
+  @override
   List<OnBoardModel> onBoardItems = [];
 
   @override
@@ -44,6 +48,7 @@ class OnBoardViewMockModel implements OnBoardViewModel {
         CoreDio(BaseOptions(baseUrl: "https://jsonplaceholder.typicode.com"));
     stringHelper = MockStringHelper();
     localeManager = LocaleManager.instance;
+    vexanaManager = VexanaManager.instance!;
   }
 
   @override

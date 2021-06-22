@@ -76,7 +76,7 @@ class OnBoardView extends StatelessWidget {
         onPressed: () {
           print(LocaleManager.instance
               .getBoolValue(SharedPrefKeys.IS_FIRST_LOAD));
-          // viewModel.completeOnBoard();
+          viewModel.completeOnBoard();
         });
   }
 

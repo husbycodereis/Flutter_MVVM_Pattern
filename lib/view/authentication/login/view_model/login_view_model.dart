@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:folder_architecture/core/base/model/base_view_model.dart';
 import 'package:folder_architecture/core/constants/enums/locale_keys_enum.dart';
-import 'package:folder_architecture/core/init/network/vexana_manager.dart';
+import 'package:folder_architecture/core/extensions/context_extensions.dart';
 import 'package:folder_architecture/view/authentication/login/model/login_model.dart';
 import 'package:folder_architecture/view/authentication/login/service/ILoginService.dart';
 import 'package:folder_architecture/view/authentication/login/service/login_service.dart';
 import 'package:mobx/mobx.dart';
-import '../../../../core/extensions/context_extensions.dart';
+
 part 'login_view_model.g.dart';
 
 class LoginViewModel = _LoginViewModelBase with _$LoginViewModel;
@@ -25,7 +25,7 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
 
   @override
   void init() {
-    loginService = LoginService(VexanaManager.instance!.networkManager);
+    loginService = LoginService(vexanaManager!.networkManager);
     emailController = TextEditingController();
     passwordController = TextEditingController();
   }
@@ -39,15 +39,12 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   Future<void> fetchLoginService() async {
     isLoadingChange();
     if (formState.currentState!.validate()) {
-      final response = await loginService.fetchUserControl(LoginModel(
-          email: emailController.text, password: passwordController.text));
+      final response = await loginService.fetchUserControl(
+          LoginModel(
+              email: emailController.text, password: passwordController.text),
+          context!);
       if (response != null) {
-        scaffoldState.currentState!
-            // ignore: deprecated_member_use
-            .showSnackBar(SnackBar(
-          content: Text(response.token!),
-          backgroundColor: context!.customColors.darkGrey,
-        ));
+        context!.showSnackBar(response.token!);
         localeManager.setStringValue(SharedPrefKeys.TOKEN, response.token!);
       }
     }

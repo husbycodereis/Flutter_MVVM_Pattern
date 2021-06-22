@@ -24,6 +24,18 @@ extension ThemeExtension on BuildContext {
   TextTheme get textTheme => theme.textTheme;
 }
 
+extension EmptySpaceExtension on BuildContext {
+  SizedBox get sizedBoxLowVertical => SizedBox(height: lowValue);
+  SizedBox get sizedBoxNormalVertical => SizedBox(height: normalValue);
+  SizedBox get sizedBoxMediumVertical => SizedBox(height: mediumValue);
+  SizedBox get sizedBoxHighVertical => SizedBox(height: highValue);
+
+  SizedBox get sizedBoxLowHorizontal => SizedBox(width: lowValue);
+  SizedBox get sizedBoxNormalHorizontal => SizedBox(width: normalValue);
+  SizedBox get sizedBoxMediumHorizontal => SizedBox(width: mediumValue);
+  SizedBox get sizedBoxHighHorizontal => SizedBox(width: highValue);
+}
+
 extension PaddingExtensionAll on BuildContext {
   EdgeInsets get paddingLowAll => EdgeInsets.all(lowValue);
   EdgeInsets get paddingNormalAll => EdgeInsets.all(normalValue);
@@ -57,4 +69,12 @@ extension ColorExtension on BuildContext {
 extension DurationExtension on BuildContext {
   Duration get shortDuration => Duration(milliseconds: 500);
   Duration get normalDuration => Duration(seconds: 1);
+}
+
+extension SnackBarExtension on BuildContext {
+  dynamic showSnackBar(String text) =>
+      ScaffoldMessenger.of(this).showSnackBar(SnackBar(
+        content: Text(text),
+        backgroundColor: this.customColors.darkGrey,
+      ));
 }

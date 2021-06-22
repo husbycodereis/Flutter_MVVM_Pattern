@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:folder_architecture/core/extensions/context_extensions.dart';
 import '../../../core/base/state/base_state.dart';
 import '../../../core/base/view/base_view.dart';
 import '../../../core/extensions/string_extensions.dart';
@@ -57,23 +58,15 @@ class _TestViewState extends BaseState<TestView> {
         body: Center(
           child: Column(
             children: [
-              SizedBox(
-                height: 20,
-              ),
+              context.sizedBoxNormalVertical,
               buildText,
-              SizedBox(
-                height: 20,
-              ),
+              context.sizedBoxNormalVertical,
               mailField,
-              SizedBox(
-                height: 20,
-              ),
+              context.sizedBoxNormalVertical,
               Row(
                 children: [textWelcomeWidget(), iconButtonChangeTheme(context)],
               ),
-              SizedBox(
-                height: 20,
-              ),
+              context.sizedBoxNormalVertical,
               Container(
                 width: dynamicWidth(0.8),
                 color: Colors.transparent,
