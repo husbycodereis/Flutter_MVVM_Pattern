@@ -22,4 +22,4 @@ Please find the links to the course from below links.
 - [Youtube channel](https://www.youtube.com/watch?v=fGNXqZd-Als&list=PL1k5oWAuBhgV_XnhMSyu2YLZMZNGuD0Cv)
 - [Github link](https://github.com/VB10/flutter-architecture-template)
 
-All credit goes to original creator Veli Bacik for preparing the course and the code base, this is only a work of practice.
+All credit goes to original creator for preparing the course and the code base, this is only a work of practice.
