@@ -1,17 +1,25 @@
 # folder_architecture
 
-A new Flutter project.
+This is the ongoing series about Flutter Folder Architecture in MVVM pattern that is prepared by Veli Bacik.
 
-## Getting Started
+The project is created to code along and learn the advanced methods ranging from:
 
-This project is a starting point for a Flutter application.
+* caching
+* networking
+* localization
+* theme
+* Navigation
+* MobX State Management
+* extensions and their usage
+* Atomic Design
+* folder structure
+* MVVM pattern principals
+* Example usage of the architecture
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Please find the links to the course from below links.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# vb_starter_project
+- [Youtube channel](https://www.youtube.com/watch?v=fGNXqZd-Als&list=PL1k5oWAuBhgV_XnhMSyu2YLZMZNGuD0Cv)
+- [Github link](https://github.com/VB10/flutter-architecture-template)
+
+All credit goes to original creator Veli Bacik for preparing the course and the code base, this is only a work of practice.
