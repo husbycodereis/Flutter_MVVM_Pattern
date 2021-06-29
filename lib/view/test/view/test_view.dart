@@ -1,9 +1,11 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:folder_architecture/core/extensions/context_extensions.dart';
+
 import '../../../core/base/state/base_state.dart';
 import '../../../core/base/view/base_view.dart';
+import '../../../core/extensions/context_extensions.dart';
 import '../../../core/extensions/string_extensions.dart';
 import '../../../core/init/lang/locale_keys.g.dart';
 import '../viewmodel/test_view_model.dart';
@@ -19,7 +21,7 @@ class _TestViewState extends BaseState<TestView> {
   final StreamController streamController = StreamController();
   late TestViewModel _testViewModel;
 
-  addData() async {
+  void addData() async {
     for (var i = 0; i < 10; i++) {
       await Future.delayed(Duration(seconds: 1));
       streamController.sink.add(i);

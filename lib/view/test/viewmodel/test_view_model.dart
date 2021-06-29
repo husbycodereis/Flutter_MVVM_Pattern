@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/base/model/base_view_model.dart';
-import 'package:folder_architecture/core/constants/enums/http_request_enum.dart';
-import 'package:folder_architecture/core/init/notifier/theme_notifier.dart';
-import 'package:folder_architecture/view/test/model/test_model.dart';
 import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
+
+import '../../../core/base/model/base_view_model.dart';
+import '../../../core/constants/enums/http_request_enum.dart';
+import '../../../core/init/notifier/theme_notifier.dart';
+import '../model/test_model.dart';
+
 part 'test_view_model.g.dart';
 
 class TestViewModel = _TestViewModelBase with _$TestViewModel;

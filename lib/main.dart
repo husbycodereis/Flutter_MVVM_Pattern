@@ -1,18 +1,18 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/constants/app/app_constants.dart';
-import 'package:folder_architecture/core/constants/enums/locale_keys_enum.dart';
-import 'package:folder_architecture/core/init/cache/locale_manager.dart';
-import 'package:folder_architecture/core/init/lang/language_manager.dart';
-import 'package:folder_architecture/core/init/navigation/navigation_routes.dart';
-import 'package:folder_architecture/core/init/navigation/navigation_service.dart';
-import 'package:folder_architecture/core/init/notifier/on_board_notifier.dart';
-import 'package:folder_architecture/core/init/notifier/provider_list.dart';
-import 'package:folder_architecture/core/init/notifier/theme_notifier.dart';
-import 'package:folder_architecture/view/authentication/login/view/login_view.dart';
-import 'package:folder_architecture/view/authentication/onboard/view/on_board_view.dart';
-
 import 'package:provider/provider.dart';
+
+import 'core/constants/app/app_constants.dart';
+import 'core/constants/enums/locale_keys_enum.dart';
+import 'core/init/cache/locale_manager.dart';
+import 'core/init/lang/language_manager.dart';
+import 'core/init/navigation/navigation_routes.dart';
+import 'core/init/navigation/navigation_service.dart';
+import 'core/init/notifier/on_board_notifier.dart';
+import 'core/init/notifier/provider_list.dart';
+import 'core/init/notifier/theme_notifier.dart';
+import 'view/authentication/login/view/login_view.dart';
+import 'view/authentication/onboard/view/on_board_view.dart';
 
 void main() async {
   await _init();

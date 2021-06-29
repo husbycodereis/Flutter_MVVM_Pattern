@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/constants/enums/locale_keys_enum.dart';
-import 'package:folder_architecture/core/constants/navigation/navigation_constants.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../core/base/model/base_view_model.dart';
+import '../../../../core/constants/enums/locale_keys_enum.dart';
+import '../../../../core/constants/navigation/navigation_constants.dart';
 import '../../../../core/init/lang/locale_keys.g.dart';
 import '../../../_product/_constants/image_path_svg.dart';
 import '../model/on_board_model.dart';
@@ -62,7 +62,7 @@ abstract class _OnBoardViewModelBase with Store, BaseViewModel {
   Future<void> completeOnBoard() async {
     changeLoading();
     await localeManager.setBoolValue(SharedPrefKeys.IS_FIRST_LOAD, true);
-    navigation.navigateToPageClear(
+    await navigation.navigateToPageClear(
       path: NavigationConstants.LOGIN_VIEW,
     );
     changeLoading();

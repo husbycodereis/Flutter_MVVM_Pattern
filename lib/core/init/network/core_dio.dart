@@ -1,12 +1,14 @@
 import 'dart:io';
+
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
-import 'package:folder_architecture/core/base/model/base_error.dart';
-import 'package:folder_architecture/core/base/model/base_model.dart';
-import 'package:folder_architecture/core/constants/enums/http_request_enum.dart';
-import 'package:folder_architecture/core/extensions/network_extensions.dart';
-import 'package:folder_architecture/core/init/network/ICoreDio.dart';
-import 'package:folder_architecture/core/init/network/IResponseModel.dart';
+
+import '../../base/model/base_error.dart';
+import '../../base/model/base_model.dart';
+import '../../constants/enums/http_request_enum.dart';
+import '../../extensions/network_extensions.dart';
+import 'ICoreDio.dart';
+import 'IResponseModel.dart';
 
 part 'package:folder_architecture/core/init/network/network_core/core_operations.dart';
 
@@ -15,14 +17,15 @@ class CoreDio with DioMixin implements Dio, ICoreDioNullSafety {
   final BaseOptions options;
 
   CoreDio(this.options) {
-    this.options = options;
-    this.interceptors.add(InterceptorsWrapper());
-    this.httpClientAdapter = DefaultHttpClientAdapter();
+    options = options;
+    interceptors.add(InterceptorsWrapper());
+    httpClientAdapter = DefaultHttpClientAdapter();
   }
 
   //R means Response, R and T are generic types as placeholder types
   //* <R, T> means give back R model and accept T model.
 
+  @override
   Future<IResponseModel<R>> send<R, T extends BaseModel>(String path,
       {required HttpTypes type,
       required T parseModel,

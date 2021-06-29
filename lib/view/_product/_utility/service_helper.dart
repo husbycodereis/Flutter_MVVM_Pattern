@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vexana/vexana.dart';
-import 'package:folder_architecture/core/extensions/context_extensions.dart';
+
+import '../../../core/extensions/context_extensions.dart';
 
 abstract class ServiceHelper {
   void showMessage(IErrorModel? errorModel, BuildContext context) {

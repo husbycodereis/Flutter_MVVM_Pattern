@@ -13,6 +13,7 @@ import 'package:folder_architecture/view/authentication/onboard/view_model/on_bo
 import '../../core/network/dio_mock_model.dart';
 
 class OnBoardViewMockModel implements OnBoardViewModel {
+  @override
   bool isLoading = false;
   late IStringHelper stringHelper;
 
@@ -45,7 +46,7 @@ class OnBoardViewMockModel implements OnBoardViewModel {
   @override
   void init() {
     coreDio =
-        CoreDio(BaseOptions(baseUrl: "https://jsonplaceholder.typicode.com"));
+        CoreDio(BaseOptions(baseUrl: 'https://jsonplaceholder.typicode.com'));
     stringHelper = MockStringHelper();
     localeManager = LocaleManager.instance;
     vexanaManager = VexanaManager.instance!;

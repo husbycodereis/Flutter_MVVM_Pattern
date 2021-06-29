@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:folder_architecture/core/components/buttons/icon_button.dart';
+import '../../../../core/components/buttons/icon_button.dart';
 
 class LoginButton extends StatelessWidget {
   final Function(String data) onComplete;

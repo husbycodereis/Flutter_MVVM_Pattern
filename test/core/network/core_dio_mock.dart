@@ -20,13 +20,14 @@ class CoreDioMock with DioMixin implements ICoreDioFullNulSafetyFull, Dio {
     interceptors.add(InterceptorsWrapper());
     httpClientAdapter = DefaultHttpClientAdapter();
   }
+  @override
   Future<IResponseModel<R>> send<R, T extends BaseModel>(String path,
       {HttpTypes? type,
       T? parseModel,
       data,
       Map<String, Object>? queryParameters,
       void Function(int p1, int p2)? onReceiveProgress}) async {
-    final Response<dynamic> response = await request(path,
+    final response = await request(path,
         data: data, options: Options(method: type!.rawValue));
     switch (response.statusCode) {
       case HttpStatus.ok:

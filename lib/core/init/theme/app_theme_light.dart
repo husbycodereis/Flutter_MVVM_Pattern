@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/init/theme/app_theme.dart';
-import 'package:folder_architecture/core/init/theme/light/theme_interface_light.dart';
+
+import 'app_theme.dart';
+import 'light/theme_interface_light.dart';
 
 class AppThemeLight extends AppTheme with ILightTheme {
   static AppThemeLight? _instance;
@@ -10,6 +11,7 @@ class AppThemeLight extends AppTheme with ILightTheme {
 
   AppThemeLight._init();
 
+  @override
   ThemeData get theme => ThemeData(
       fontFamily: '',
       colorScheme: colorThemeLight!.colorScheme,

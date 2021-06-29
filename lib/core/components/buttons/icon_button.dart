@@ -17,7 +17,7 @@ class NormalIconButton extends StatelessWidget {
       child: Center(
         child: Icon(icon),
       ),
-      onPressed: this.onPressed,
+      onPressed: onPressed,
     );
   }
 }

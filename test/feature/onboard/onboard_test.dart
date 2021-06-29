@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'onboard_mock_view_model.dart';
 
+// ignore: always_declare_return_types
 main() {
   late OnBoardViewMockModel mockViewMOdel;
   late IStringHelper stringHelper;
@@ -12,7 +13,7 @@ main() {
   });
 
   test('String Helper Upper Case', () {
-    String text = 'Hello';
+    var text = 'Hello';
     text = stringHelper.toUpper(text);
     expect(text.contains(RegExp(r'[A-Z]')), true);
   });
@@ -37,7 +38,7 @@ main() {
   });
 
   group('Test All', () {
-    int index = 0;
+    var index = 0;
     test('OnBoard Get Models', () {
       mockViewMOdel.onBoardGetModels();
       index = mockViewMOdel.onBoardItems.length;

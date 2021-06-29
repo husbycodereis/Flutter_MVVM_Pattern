@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/view/authentication/login/model/login_model.dart';
-import 'package:folder_architecture/view/authentication/login/model/login_response_model.dart';
+import '../model/login_model.dart';
+import '../model/login_response_model.dart';
 import 'package:vexana/vexana.dart';
 
 abstract class ILoginService {

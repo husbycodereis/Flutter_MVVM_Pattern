@@ -1,7 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/init/theme/light/color_theme_light.dart';
+
+import '../init/theme/light/color_theme_light.dart';
 
 extension ContextExtension on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
@@ -75,6 +76,6 @@ extension SnackBarExtension on BuildContext {
   dynamic showSnackBar(String text) =>
       ScaffoldMessenger.of(this).showSnackBar(SnackBar(
         content: Text(text),
-        backgroundColor: this.customColors.darkGrey,
+        backgroundColor: customColors.darkGrey,
       ));
 }

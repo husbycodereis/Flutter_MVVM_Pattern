@@ -2,11 +2,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:folder_architecture/core/extensions/string_extensions.dart';
-import 'package:folder_architecture/core/init/lang/locale_keys.g.dart';
-import 'package:folder_architecture/view/_product/_constants/image_path_svg.dart';
+
 import '../../../../core/base/view/base_view.dart';
 import '../../../../core/extensions/context_extensions.dart';
+import '../../../../core/extensions/string_extensions.dart';
+import '../../../../core/init/lang/locale_keys.g.dart';
+import '../../../_product/_constants/image_path_svg.dart';
 import '../view_model/login_view_model.dart';
 
 class LoginView extends StatelessWidget {

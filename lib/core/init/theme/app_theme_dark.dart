@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/init/theme/app_theme.dart';
-import 'package:folder_architecture/core/init/theme/dark/theme_interface_dark.dart';
+
+import 'app_theme.dart';
+import 'dark/theme_interface_dark.dart';
 
 class AppThemeDark extends AppTheme with IDarkTheme {
   static AppThemeDark? _instance;
@@ -10,6 +11,7 @@ class AppThemeDark extends AppTheme with IDarkTheme {
 
   AppThemeDark.init();
 
+  @override
   ThemeData get theme => ThemeData(
       fontFamily: '',
       primaryColor: colorThemeDark!.red,

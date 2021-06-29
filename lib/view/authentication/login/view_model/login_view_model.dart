@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/base/model/base_view_model.dart';
-import 'package:folder_architecture/core/constants/enums/locale_keys_enum.dart';
-import 'package:folder_architecture/core/extensions/context_extensions.dart';
-import 'package:folder_architecture/view/authentication/login/model/login_model.dart';
-import 'package:folder_architecture/view/authentication/login/service/ILoginService.dart';
-import 'package:folder_architecture/view/authentication/login/service/login_service.dart';
 import 'package:mobx/mobx.dart';
+
+import '../../../../core/base/model/base_view_model.dart';
+import '../../../../core/constants/enums/locale_keys_enum.dart';
+import '../../../../core/extensions/context_extensions.dart';
+import '../model/login_model.dart';
+import '../service/ILoginService.dart';
+import '../service/login_service.dart';
 
 part 'login_view_model.g.dart';
 
@@ -45,7 +46,7 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
           context!);
       if (response != null) {
         context!.showSnackBar(response.token!);
-        localeManager.setStringValue(SharedPrefKeys.TOKEN, response.token!);
+        await localeManager.setStringValue(SharedPrefKeys.TOKEN, response.token!);
       }
     }
     isLoadingChange();

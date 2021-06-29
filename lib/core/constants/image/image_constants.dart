@@ -7,5 +7,5 @@ class ImageConstants {
 
   ImageConstants._init();
 
-  String toPng(String name) => "assets/images/$name.png";
+  String toPng(String name) => 'assets/images/$name.png';
 }

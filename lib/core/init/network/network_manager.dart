@@ -1,5 +1,6 @@
 
 import 'package:dio/dio.dart';
+
 import '../../constants/enums/locale_keys_enum.dart';
 import '../cache/locale_manager.dart';
 import 'ICoreDio.dart';
@@ -15,9 +16,9 @@ class NetworkManager {
 
   NetworkManager._init() {
     final baseOptions = BaseOptions(
-        baseUrl: "https://reqres.in/api",
+        baseUrl: 'https://reqres.in/api',
         headers: {
-          "val": LocaleManager.instance.getStringValue(SharedPrefKeys.TOKEN)
+          'val': LocaleManager.instance.getStringValue(SharedPrefKeys.TOKEN)
         });
 
     coreDio = CoreDio(baseOptions);
