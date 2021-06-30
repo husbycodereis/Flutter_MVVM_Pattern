@@ -15,13 +15,9 @@ class ThemeNotifier extends ChangeNotifier {
     if (_currenThemeEnum == AppThemes.LIGHT) {
       _currenThemeEnum = AppThemes.DARK;
       _currentTheme = AppThemeDark.instance.theme;
-      print(_currenThemeEnum.toString());
-      print(_currentTheme.toString());
     } else {
       _currenThemeEnum = AppThemes.LIGHT;
       _currentTheme = AppThemeLight.instance.theme;
-      print(_currenThemeEnum.toString());
-      print(_currentTheme.toString());
     }
     notifyListeners();
   }

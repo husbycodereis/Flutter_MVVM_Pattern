@@ -24,7 +24,7 @@ class CoreDioMock with DioMixin implements ICoreDioFullNulSafetyFull, Dio {
   Future<IResponseModel<R>> send<R, T extends BaseModel>(String path,
       {HttpTypes? type,
       T? parseModel,
-      data,
+      dynamic data,
       Map<String, Object>? queryParameters,
       void Function(int p1, int p2)? onReceiveProgress}) async {
     final response = await request(path,
@@ -43,10 +43,11 @@ class CoreDioMock with DioMixin implements ICoreDioFullNulSafetyFull, Dio {
   Future<IResponseModel<R>> fetchNoNetwork<R, T extends BaseModel>(String path,
       {HttpTypes? type,
       T? parseModel,
-      data,
+      dynamic data,
       Map<String, Object>? queryParameters,
       void Function(int p1, int p2)? onReceiveProgress}) async {
-    final dumyJson = '''[
+    const dumyJson = '''
+    [
   {
     "userId": 1,
     "id": 1,
@@ -59,7 +60,7 @@ class CoreDioMock with DioMixin implements ICoreDioFullNulSafetyFull, Dio {
     "title": "qui est esse",
     "body": "est rerum tempore vitaensequi sint nihil reprehenderit dolor beatae ea dolores nequenfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendisnqui aperiam non debitis possimus qui neque nisi nulla"
   }]''';
-    final List<dynamic> response = jsonDecode(dumyJson);
+    final dynamic response = jsonDecode(dumyJson);
     final model = _responseParser<R, T>(parseModel, response);
     return ResponseModel<R>(data: model);
   }
@@ -67,7 +68,7 @@ class CoreDioMock with DioMixin implements ICoreDioFullNulSafetyFull, Dio {
   R? _responseParser<R, T>(BaseModel? model, dynamic data) {
     if (data is List) {
       return data
-          .map((e) => model!.fromJson(Map<String, Object>.from(e)))
+          .map((e) => model!.fromJson(Map<String, Object>.from(e as Map<dynamic, dynamic>)))
           .toList()
           .cast<T>() as R;
     } else if (data is Map) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:folder_architecture/core/constants/navigation/navigation_constants.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../core/base/model/base_view_model.dart';
@@ -46,7 +47,11 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
           context!);
       if (response != null) {
         context!.showSnackBar(response.token!);
-        await localeManager.setStringValue(SharedPrefKeys.TOKEN, response.token!);
+        await localeManager.setStringValue(
+            SharedPrefKeys.TOKEN, response.token!);
+        await navigation.navigateToPage(
+          path: NavigationConstants.TEST_VIEW,
+        );
       }
     }
     isLoadingChange();

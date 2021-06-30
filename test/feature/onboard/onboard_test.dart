@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'onboard_mock_view_model.dart';
 
 // ignore: always_declare_return_types
-main() {
+void main() {
   late OnBoardViewMockModel mockViewMOdel;
   late IStringHelper stringHelper;
   setUp(() {
@@ -15,7 +15,7 @@ main() {
   test('String Helper Upper Case', () {
     var text = 'Hello';
     text = stringHelper.toUpper(text);
-    expect(text.contains(RegExp(r'[A-Z]')), true);
+    expect(text.contains(RegExp('[A-Z]')), true);
   });
 
   test('OnBoard Get Models', () {

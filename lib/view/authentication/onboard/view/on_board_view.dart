@@ -4,14 +4,13 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/base/view/base_view.dart';
 import '../../../../core/components/text/locale_text.dart';
-import '../../../../core/constants/enums/locale_keys_enum.dart';
 import '../../../../core/extensions/context_extensions.dart';
-import '../../../../core/init/cache/locale_manager.dart';
 import '../../../_product/_widgets/avatar/on_board_circle.dart';
-import 'package:folder_architecture/view/authentication/onboard/model/on_board_model.dart';
-import 'package:folder_architecture/view/authentication/onboard/view_model/on_board_view_model.dart';
+import '../model/on_board_model.dart';
+import '../view_model/on_board_view_model.dart';
 
 class OnBoardView extends StatelessWidget {
+const OnBoardView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return BaseView<OnBoardViewModel>(
@@ -26,8 +25,8 @@ class OnBoardView extends StatelessWidget {
           padding: context.paddingNormalHorizontal,
           child: Column(
             children: [
-              Spacer(
-                flex: 1,
+              const Spacer(
+                
               ),
               Expanded(
                 flex: 5,
@@ -58,7 +57,7 @@ class OnBoardView extends StatelessWidget {
         buildDotIndicator(viewModel),
         Expanded(child: Center(child: Observer(builder: (_) {
           return Visibility(
-              visible: viewModel.isLoading, child: CircularProgressIndicator());
+              visible: viewModel.isLoading, child: const CircularProgressIndicator());
         }))),
         buildFloatingActionButton(context, viewModel)
       ],
@@ -68,16 +67,15 @@ class OnBoardView extends StatelessWidget {
   FloatingActionButton buildFloatingActionButton(
       BuildContext context, OnBoardViewModel viewModel) {
     return FloatingActionButton(
+        onPressed: () {
+
+          viewModel.completeOnBoard();
+        },
         child: Icon(
           Icons.arrow_forward_ios,
           color: Colors.white,
           size: context.height * 0.025,
-        ),
-        onPressed: () {
-          print(LocaleManager.instance
-              .getBoolValue(SharedPrefKeys.IS_FIRST_LOAD));
-          viewModel.completeOnBoard();
-        });
+        ));
   }
 
   ListView buildDotIndicator(OnBoardViewModel viewModel) {

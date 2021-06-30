@@ -49,7 +49,7 @@ class OnBoardViewMockModel implements OnBoardViewModel {
         CoreDio(BaseOptions(baseUrl: 'https://jsonplaceholder.typicode.com'));
     stringHelper = MockStringHelper();
     localeManager = LocaleManager.instance;
-    vexanaManager = VexanaManager.instance!;
+    vexanaManager = VexanaManager.instance;
   }
 
   @override
@@ -74,7 +74,7 @@ class OnBoardViewMockModel implements OnBoardViewModel {
 
   @override
   Future<void> completeOnBoard() async {
-    await localeManager.setBoolValue(SharedPrefKeys.IS_FIRST_LOAD, true);
+    await localeManager.setBoolValue(SharedPrefKeys.IS_FIRST_LOAD,value: true);
   }
 
   @override

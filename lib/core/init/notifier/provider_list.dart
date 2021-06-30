@@ -1,14 +1,14 @@
-import 'package:folder_architecture/core/init/navigation/navigation_service.dart';
-import 'package:folder_architecture/core/init/notifier/on_board_notifier.dart';
-import 'package:folder_architecture/core/init/notifier/theme_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
+
+import '../navigation/navigation_service.dart';
+import 'on_board_notifier.dart';
+import 'theme_notifier.dart';
 
 class ApplicationProvider {
   static ApplicationProvider? _instance;
   static ApplicationProvider? get instance {
-    _instance ??= ApplicationProvider._init();
-    return _instance;
+    return _instance ??= ApplicationProvider._init();
   }
 
   ApplicationProvider._init();

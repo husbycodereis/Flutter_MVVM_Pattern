@@ -68,8 +68,8 @@ extension ColorExtension on BuildContext {
 }
 
 extension DurationExtension on BuildContext {
-  Duration get shortDuration => Duration(milliseconds: 500);
-  Duration get normalDuration => Duration(seconds: 1);
+  Duration get shortDuration => const Duration(milliseconds: 500);
+  Duration get normalDuration => const Duration(seconds: 1);
 }
 
 extension SnackBarExtension on BuildContext {

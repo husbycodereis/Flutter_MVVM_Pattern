@@ -10,7 +10,7 @@ class NotFoundNavigation extends StatefulWidget {
 class _NotFoundNavigationState extends State<NotFoundNavigation> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Text('not found'),
     );
   }

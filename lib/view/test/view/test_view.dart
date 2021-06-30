@@ -21,16 +21,16 @@ class _TestViewState extends BaseState<TestView> {
   final StreamController streamController = StreamController();
   late TestViewModel _testViewModel;
 
-  void addData() async {
+  Future addData() async {
     for (var i = 0; i < 10; i++) {
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
       streamController.sink.add(i);
     }
   }
 
   Stream<int> numberStream() async* {
     for (var i = 0; i < 10; i++) {
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
       streamController.sink.add(i);
       yield i;
     }
@@ -54,7 +54,7 @@ class _TestViewState extends BaseState<TestView> {
 
   Widget get buildScaffoldBody => Scaffold(
         appBar: AppBar(
-          title: Text('Test Widget'),
+          title: const Text('Test Widget'),
         ),
         floatingActionButton: buildFloatingActionButton,
         body: Center(
@@ -77,12 +77,12 @@ class _TestViewState extends BaseState<TestView> {
                       .map((number) => 'stream number is $number'),
                   builder: (BuildContext context, AsyncSnapshot snapshot) {
                     if (snapshot.hasError) {
-                      return Text('anasini siktin');
+                      return const Text('anasini siktin');
                     } else if (snapshot.connectionState ==
                         ConnectionState.waiting) {
-                      return CircularProgressIndicator();
+                      return const CircularProgressIndicator();
                     }
-                    return Text(snapshot.data);
+                    return Text(snapshot.data.toString());
                   },
                 ),
               ),
@@ -95,7 +95,7 @@ class _TestViewState extends BaseState<TestView> {
 
   IconButton iconButtonChangeTheme(BuildContext context) {
     return IconButton(
-        icon: Icon(Icons.brightness_5),
+        icon: const Icon(Icons.brightness_5),
         onPressed: () {
           _testViewModel.changeTheme();
         });

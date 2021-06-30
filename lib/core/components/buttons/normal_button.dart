@@ -13,8 +13,8 @@ class NormalButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
+      style: ElevatedButton.styleFrom(shape: const StadiumBorder()),
       child: child,
-      style: ElevatedButton.styleFrom(shape: StadiumBorder()),
     );
   }
 }

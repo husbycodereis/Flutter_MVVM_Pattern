@@ -14,10 +14,10 @@ class NormalIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NormalButton(
+      onPressed: onPressed,
       child: Center(
         child: Icon(icon),
       ),
-      onPressed: onPressed,
     );
   }
 }

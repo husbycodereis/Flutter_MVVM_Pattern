@@ -23,8 +23,8 @@ class LocaleManager {
     await _preferences!.setString(key.toString(), value);
   }
 
-  Future<void> setBoolValue(SharedPrefKeys key, bool value) async {
-    await _preferences!.setBool(key.toString(), value);
+  Future<void> setBoolValue(SharedPrefKeys key, {bool? value}) async {
+    await _preferences!.setBool(key.toString(), value!);
   }
 
   String getStringValue(SharedPrefKeys? key) =>

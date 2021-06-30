@@ -60,7 +60,8 @@ class LoginView extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           color: context.customColors.white,
-          borderRadius: BorderRadius.vertical(bottom: Radius.circular(50))),
+          borderRadius:
+              const BorderRadius.vertical(bottom: Radius.circular(50))),
       child: Padding(
         padding: EdgeInsets.only(
             left: context.highValue,
@@ -87,20 +88,20 @@ class LoginView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Spacer(
+          const Spacer(
             flex: 6,
           ),
           buildTextFormFieldEmail(context, viewModel),
           buildTextFormFieldPassword(context, viewModel),
-          Spacer(),
+          const Spacer(),
           buildForgotPassword(),
-          Spacer(
+          const Spacer(
             flex: 6,
           ),
           buildLoginButton(context, viewModel),
-          Spacer(),
+          const Spacer(),
           buildSignUpText(),
-          Spacer()
+          const Spacer()
         ],
       ),
     );
@@ -127,10 +128,10 @@ class LoginView extends StatelessWidget {
           obscureText: viewModel.isLockOpen,
           decoration: InputDecoration(
               suffix: GestureDetector(
+                onTap: () => viewModel.isLockStateChange(),
                 child: Icon(viewModel.isLockOpen
                     ? Icons.remove_red_eye_outlined
                     : Icons.remove_red_eye),
-                onTap: () => viewModel.isLockStateChange(),
               ),
               labelText: LocaleKeys.login_password.locale,
               icon: buildContainerIconField(context, Icons.lock)),
@@ -159,14 +160,14 @@ class LoginView extends StatelessWidget {
             : () {
                 viewModel.fetchLoginService();
               },
+        style: ElevatedButton.styleFrom(
+          primary: context.colors.secondary,
+          shape: const StadiumBorder(),
+          padding: context.paddingMediumAll,
+        ),
         child: Text(
           LocaleKeys.login_enter.tr(),
           style: context.textTheme.bodyText1,
-        ),
-        style: ElevatedButton.styleFrom(
-          primary: context.colors.secondary,
-          shape: StadiumBorder(),
-          padding: context.paddingMediumAll,
         ),
       );
     });

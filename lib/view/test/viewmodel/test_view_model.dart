@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
@@ -44,7 +46,7 @@ abstract class _TestViewModelBase with Store, BaseViewModel {
     final list = await coreDio!.send<List<TestModel>, TestModel>('x',
         type: HttpTypes.GET, parseModel: TestModel());
     if (list is List<TestModel>) {
-      print(true);
+      log(true.toString());
     }
     isLoading = false;
   }

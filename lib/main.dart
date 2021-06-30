@@ -14,20 +14,21 @@ import 'core/init/notifier/theme_notifier.dart';
 import 'view/authentication/login/view/login_view.dart';
 import 'view/authentication/onboard/view/on_board_view.dart';
 
-void main() async {
+Future main() async {
   await _init();
   runApp(MultiProvider(
     providers: [...ApplicationProvider.instance!.dependItems],
     child: EasyLocalization(
-      child: MyApp(),
       supportedLocales: LanguageManager.instance!.supportedLocales,
       path: ApplicationConstants.LANG_ASSETS_PATH,
       startLocale: LanguageManager.instance!.enLocale,
+      child: const MyApp(),
     ),
   ));
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Consumer2<ThemeNotifier, OnBoardNotifier>(
@@ -40,7 +41,8 @@ class MyApp extends StatelessWidget {
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,
-        home: onBoardNotifier.isOnBoardViewed ? LoginView() : OnBoardView(),
+        home:
+            onBoardNotifier.isOnBoardViewed ? const LoginView() : const OnBoardView(),
       ),
     );
   }

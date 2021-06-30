@@ -23,7 +23,7 @@ class CoreDio with DioMixin implements Dio, ICoreDioNullSafety {
   }
 
   //R means Response, R and T are generic types as placeholder types
-  //* <R, T> means give back R model and accept T model.
+  //* <R, T> means give back T model and accept R model.
 
   @override
   Future<IResponseModel<R>> send<R, T extends BaseModel>(String path,
@@ -38,7 +38,7 @@ class CoreDio with DioMixin implements Dio, ICoreDioNullSafety {
       case HttpStatus.ok:
       case HttpStatus.accepted:
         final model = _responseParser(parseModel, response.data);
-        return ResponseModel<R>(data: model);
+        return ResponseModel<R>(data: model as R);
 
       default:
         return ResponseModel(
@@ -48,7 +48,7 @@ class CoreDio with DioMixin implements Dio, ICoreDioNullSafety {
 
   //example demonstration of R, T  types
   ReturningType returner<ArgumentType, ReturningType>(ArgumentType someType) {
-    final dynamic someModel = someType;
+    final ReturningType someModel = someType as ReturningType;
     return someModel;
   }
 }

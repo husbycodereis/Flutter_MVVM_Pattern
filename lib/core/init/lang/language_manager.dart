@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 class LanguageManager {
   static LanguageManager? _instance;
   static LanguageManager? get instance {
-    _instance ??= LanguageManager._init();
-    return _instance;
+   return _instance ??= LanguageManager._init();
   }
 
   LanguageManager._init();
 
-  final enLocale = Locale('en', 'US');
-  final trLocale = Locale('tr', 'TR');
+  final enLocale = const Locale('en', 'US');
+  final trLocale = const Locale('tr', 'TR');
 
   List<Locale> get supportedLocales => [enLocale, trLocale];
 }

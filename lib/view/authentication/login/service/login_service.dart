@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:vexana/vexana.dart';
+
 import '../../../_product/_utility/service_helper.dart';
 import '../../../_product/enum/network_route_enum.dart';
+import '../model/login_model.dart';
 import '../model/login_response_model.dart';
-import 'package:folder_architecture/view/authentication/login/model/login_model.dart';
-import 'package:folder_architecture/view/authentication/login/service/ILoginService.dart';
-import 'package:vexana/vexana.dart';
+import 'ILoginService.dart';
 
 class LoginService extends ILoginService with ServiceHelper {
   LoginService(INetworkManager manager) : super(manager: manager);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:folder_architecture/view/authentication/onboard/view/on_board_view.dart';
 
 import '../../../view/authentication/login/view/login_view.dart';
 import '../../../view/test/view/test_view.dart';
@@ -14,12 +15,14 @@ class NavigationRoute {
   Route<dynamic> generateRoute(RouteSettings args) {
     switch (args.name) {
       case NavigationConstants.TEST_VIEW:
-        return normalNavigate(TestView());
+        return normalNavigate(const TestView());
       case NavigationConstants.LOGIN_VIEW:
-        return normalNavigate(LoginView());
+        return normalNavigate(const LoginView());
+      case NavigationConstants.ON_BOARD:
+        return normalNavigate(const OnBoardView());
 
       default:
-        return normalNavigate(NotFoundNavigation());
+        return normalNavigate(const NotFoundNavigation());
     }
   }
 
