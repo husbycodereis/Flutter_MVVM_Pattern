@@ -1,6 +1,6 @@
-import 'package:folder_architecture/core/base/model/base_model.dart';
+import 'package:vexana/vexana.dart';
 
-class PostModel extends BaseModel<PostModel> {
+class PostModel extends INetworkModel<PostModel> {
   int? userId;
   int? id;
   String? title;
@@ -26,7 +26,45 @@ class PostModel extends BaseModel<PostModel> {
   }
 
   @override
-  PostModel fromJson(Map<String, Object> json) {
+  PostModel fromJson(Map<String, dynamic> json) {
     return PostModel.fromJson(json);
+  }
+}
+
+class SocialUser extends INetworkModel<SocialUser> {
+  SocialUser({
+    this.albumId,
+    this.id,
+    this.title,
+    this.url,
+    this.thumbnailUrl,
+  });
+
+  int? albumId;
+  int? id;
+  String? title;
+  String? url;
+  String? thumbnailUrl;
+
+  factory SocialUser.fromJson(Map<String, dynamic> json) => SocialUser(
+        albumId: json['albumId'] as int,
+        id: json['id'] as int,
+        title: json['title'] as String,
+        url: json['url'] as String,
+        thumbnailUrl: json['thumbnailUrl'] as String,
+      );
+
+  @override
+  Map<String, dynamic> toJson() => {
+        'albumId': albumId,
+        'id': id,
+        'title': title,
+        'url': url,
+        'thumbnailUrl': thumbnailUrl,
+      };
+
+  @override
+  SocialUser fromJson(Map<String, dynamic> json) {
+    return SocialUser.fromJson(json);
   }
 }

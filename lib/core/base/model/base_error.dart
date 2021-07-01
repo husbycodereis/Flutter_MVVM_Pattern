@@ -1,4 +1,4 @@
-import '../../init/network/IResponseModel.dart';
+import 'package:vexana/vexana.dart';
 
 class BaseError extends IErrorModel{
   final String? message;

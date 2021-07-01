@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:folder_architecture/view/authentication/login/view/login_view.dart';
 import 'package:provider/provider.dart';
 
 import 'core/constants/app/app_constants.dart';
@@ -11,7 +12,6 @@ import 'core/init/navigation/navigation_service.dart';
 import 'core/init/notifier/on_board_notifier.dart';
 import 'core/init/notifier/provider_list.dart';
 import 'core/init/notifier/theme_notifier.dart';
-import 'view/authentication/login/view/login_view.dart';
 import 'view/authentication/onboard/view/on_board_view.dart';
 
 Future main() async {
@@ -42,13 +42,14 @@ class MyApp extends StatelessWidget {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         home:
+
+            //TODO: change it back to LoginView
             onBoardNotifier.isOnBoardViewed ? const LoginView() : const OnBoardView(),
       ),
     );
   }
 
-  bool get isOnbardViewed =>
-      LocaleManager.instance.getBoolValue(SharedPrefKeys.IS_FIRST_LOAD);
+  bool get isOnbardViewed => LocaleManager.instance.getBoolValue(SharedPrefKeys.IS_FIRST_LOAD);
 }
 
 Future<void> _init() async {

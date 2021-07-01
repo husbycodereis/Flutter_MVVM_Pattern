@@ -23,5 +23,12 @@
         "forgot": "Forgot Password?",
         "enter": "Enter to App",
         "sign": "Don't have an account? "
+    },
+    "social": {
+        "cancel": "Cancel",
+        "next  ": "Next",
+        "search": "Search",
+        "findFriends": "Find Friends",
+        "following": "Follow"
     }
 }

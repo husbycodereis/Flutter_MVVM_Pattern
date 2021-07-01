@@ -27,7 +27,7 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
 
   @override
   void init() {
-    loginService = LoginService(vexanaManager!.networkManager);
+    loginService = LoginService(vexanaManager!.loginManager);
     emailController = TextEditingController();
     passwordController = TextEditingController();
   }
@@ -42,15 +42,12 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
     isLoadingChange();
     if (formState.currentState!.validate()) {
       final response = await loginService.fetchUserControl(
-          LoginModel(
-              email: emailController.text, password: passwordController.text),
-          context!);
+          LoginModel(email: emailController.text, password: passwordController.text), context!);
       if (response != null) {
         context!.showSnackBar(response.token!);
-        await localeManager.setStringValue(
-            SharedPrefKeys.TOKEN, response.token!);
+        await localeManager.setStringValue(SharedPrefKeys.TOKEN, response.token!);
         await navigation.navigateToPage(
-          path: NavigationConstants.TEST_VIEW,
+          path: NavigationConstants.SOCIAL_VIEW,
         );
       }
     }

@@ -61,7 +61,7 @@ abstract class _OnBoardViewModelBase with Store, BaseViewModel {
   @action
   Future<void> completeOnBoard() async {
     changeLoading();
-    await localeManager.setBoolValue(SharedPrefKeys.IS_FIRST_LOAD,value: true);
+    await localeManager.setBoolValue(SharedPrefKeys.IS_FIRST_LOAD, value: true);
     await navigation.navigateToPageClear(
       path: NavigationConstants.LOGIN_VIEW,
     );

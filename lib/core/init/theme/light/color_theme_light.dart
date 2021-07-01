@@ -9,7 +9,7 @@ class ColorThemeLight {
   ColorThemeLight.init();
 
   final Color brown = const Color(0xffa87e6f);
-  final Color red = const Color(0xffc10e0e);
+  final Color red = const Color(0xFFCC2041);
   final Color white = const Color(0xffffffff);
   final Color grey = const Color(0xffF1F3F8);
   final Color lightGrey = const Color(0xffF1F3F8);
@@ -25,7 +25,7 @@ class ColorThemeLight {
       secondary: azure, //xx
       secondaryVariant: orange, //xx
       surface: yellow,
-      background: white, //xx
+      background: lightGrey, //xx
       error: Colors.red[900]!,
       onPrimary: Colors.greenAccent,
       onSecondary: Colors.black,

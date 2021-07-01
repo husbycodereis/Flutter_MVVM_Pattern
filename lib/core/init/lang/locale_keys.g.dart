@@ -21,5 +21,11 @@ abstract class  LocaleKeys {
   static const login_enter = 'login.enter';
   static const login_sign = 'login.sign';
   static const login = 'login';
+  static const social_cancel = 'social.cancel';
+  static const social_next   = 'social.next  ';
+  static const social_search = 'social.search';
+  static const social_findFriends = 'social.findFriends';
+  static const social_following = 'social.following';
+  static const social = 'social';
 
 }

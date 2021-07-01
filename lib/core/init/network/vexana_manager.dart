@@ -9,5 +9,7 @@ class VexanaManager {
   VexanaManager.init();
 
   INetworkManager networkManager =
+      NetworkManager(isEnableLogger: true, options: BaseOptions(baseUrl: 'https://jsonplaceholder.typicode.com'));
+  INetworkManager loginManager =
       NetworkManager(isEnableLogger: true, options: BaseOptions(baseUrl: 'https://reqres.in/api'));
 }
