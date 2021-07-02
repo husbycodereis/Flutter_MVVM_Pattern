@@ -63,6 +63,12 @@ extension PaddingExtensionSymmetric on BuildContext {
       EdgeInsets.symmetric(horizontal: highValue);
 }
 
+extension RadiusExtension on BuildContext {
+  Radius get lowRadius => Radius.circular(width * 0.02);
+  Radius get normalRadius => Radius.circular(width * 0.05);
+  Radius get highadius => Radius.circular(width * 0.1);
+}
+
 extension ColorExtension on BuildContext {
   Color get randomColor => Colors.primaries[Random().nextInt(17)];
 }

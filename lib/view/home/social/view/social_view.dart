@@ -3,6 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:folder_architecture/core/extensions/context_extensions.dart';
 import 'package:folder_architecture/core/extensions/string_extensions.dart';
 import 'package:folder_architecture/core/init/lang/locale_keys.g.dart';
+import 'package:folder_architecture/view/_product/_widgets/animation/social_card_animation.dart';
 import 'package:folder_architecture/view/_product/_widgets/list-tile/friends_card.dart';
 
 import '../../../../core/base/view/base_view.dart';
@@ -31,6 +32,9 @@ class SocialView extends StatelessWidget {
                 flex: 2,
               ),
               TextField(
+                onChanged: (value) {
+                  viewModel.fetchAllSearchQuery(value);
+                },
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.symmetric(vertical: context.lowValue * 0.5),
                   prefixIcon: Icon(
@@ -104,9 +108,10 @@ class SocialView extends StatelessWidget {
     return ListView.separated(
       itemCount: viewModel.socialUserList.length,
       itemBuilder: (BuildContext context, int index) {
-        return FriendsCard(
-          user: viewModel.socialUserList[index],
-          onPressed: () {},
+        return OpenContainerSocailWrapper(
+          socialUser: viewModel.socialUserList[index],
+          closedBuilder: (BuildContext _, VoidCallback openContainer) =>
+              FriendsCard(user: viewModel.socialUserList[index], onPressed: openContainer),
         );
       },
       separatorBuilder: (context, index) => const Divider(),

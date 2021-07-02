@@ -52,6 +52,17 @@ mixin _$SoicalViewModel on _SoicalViewModelBase, Store {
       ActionController(name: '_SoicalViewModelBase');
 
   @override
+  void fetchAllSearchQuery(String text) {
+    final _$actionInfo = _$_SoicalViewModelBaseActionController.startAction(
+        name: '_SoicalViewModelBase.fetchAllSearchQuery');
+    try {
+      return super.fetchAllSearchQuery(text);
+    } finally {
+      _$_SoicalViewModelBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void isLoadingChange() {
     final _$actionInfo = _$_SoicalViewModelBaseActionController.startAction(
         name: '_SoicalViewModelBase.isLoadingChange');

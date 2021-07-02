@@ -21,4 +21,9 @@ class NavigationService implements INavigationService {
     await navigatorKey.currentState!
         .pushNamedAndRemoveUntil(path!, removeOldRoutes, arguments: data);
   }
+
+  @override
+   Future<void> pop() async {
+    await navigatorKey.currentState!.maybePop();
+  }
 }

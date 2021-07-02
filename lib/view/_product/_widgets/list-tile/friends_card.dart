@@ -19,9 +19,10 @@ class FriendsCard extends StatelessWidget {
     return ListTile(
       leading: CircleAvatar(backgroundImage: NetworkImage(user.url!)),
       title: Text(user.id.toString()),
+      onTap: onPressed,
       subtitle: Text(user.title.toString()),
       trailing: ElevatedButton(
-          onPressed: onPressed,
+          onPressed: () { },
           child: Text(
             LocaleKeys.social_following.locale,
             style: context.textTheme.bodyText2!.copyWith(color: context.customColors.white),

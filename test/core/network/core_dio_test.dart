@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:folder_architecture/view/_product/_models/query/user_query_enum.dart';
 
 import 'package:vexana/vexana.dart';
 import 'dio_mock_model.dart';
@@ -12,8 +13,8 @@ void main() {
   });
   test('CoreDio List', () async {
     final data = await networkManager.send<PostModel, List<PostModel>>('/posts',
-        method: RequestType.GET, parseModel: PostModel());
-    expect(data.data, isList);
+        queryParameters: {UserQueryEnum.ALBUMID.rawValue: 1}, method: RequestType.GET, parseModel: PostModel());
+    expect(data.data!.first.userId, 1);
   });
   test('CoreDio List Photos', () async {
     final data = await networkManager.send<SocialUser, List<SocialUser>>('/photos',
