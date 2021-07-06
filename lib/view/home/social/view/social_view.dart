@@ -3,8 +3,10 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:folder_architecture/core/extensions/context_extensions.dart';
 import 'package:folder_architecture/core/extensions/string_extensions.dart';
 import 'package:folder_architecture/core/init/lang/locale_keys.g.dart';
+import 'package:folder_architecture/core/init/network/vexana_manager.dart';
 import 'package:folder_architecture/view/_product/_widgets/animation/social_card_animation.dart';
 import 'package:folder_architecture/view/_product/_widgets/list-tile/friends_card.dart';
+import 'package:folder_architecture/view/home/social/service/social_service.dart';
 
 import '../../../../core/base/view/base_view.dart';
 import '../viewmodel/social_view_model.dart';
@@ -14,13 +16,13 @@ class SocialView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseView<SoicalViewModel>(
-      viewModel: SoicalViewModel(),
+    return BaseView<SocialViewModel>(
+      viewModel: SocialViewModel(SocialService(VexanaManager.instance!.networkManager)),
       onModelReady: (model) {
         model.setContext(context);
         model.init();
       },
-      onPageBuilder: (BuildContext context, SoicalViewModel viewModel) => Scaffold(
+      onPageBuilder: (BuildContext context, SocialViewModel viewModel) => Scaffold(
         appBar: buildAppBar(context, viewModel),
         body: Padding(
           padding: context.paddingLowAll * 1.5,
@@ -71,7 +73,7 @@ class SocialView extends StatelessWidget {
     );
   }
 
-  AppBar buildAppBar(BuildContext context, SoicalViewModel viewModel) {
+  AppBar buildAppBar(BuildContext context, SocialViewModel viewModel) {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
@@ -104,11 +106,11 @@ class SocialView extends StatelessWidget {
     );
   }
 
-  ListView buildListView(SoicalViewModel viewModel) {
+  ListView buildListView(SocialViewModel viewModel) {
     return ListView.separated(
       itemCount: viewModel.socialUserList.length,
       itemBuilder: (BuildContext context, int index) {
-        return OpenContainerSocailWrapper(
+        return OpenContainerSocialWrapper(
           socialUser: viewModel.socialUserList[index],
           closedBuilder: (BuildContext _, VoidCallback openContainer) =>
               FriendsCard(user: viewModel.socialUserList[index], onPressed: openContainer),

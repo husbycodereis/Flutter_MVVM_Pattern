@@ -4,13 +4,13 @@ import 'package:folder_architecture/view/home/social/view/social_view_detail.dar
 
 import '../../../home/social/model/social_user_model.dart';
 
-class OpenContainerSocailWrapper extends StatelessWidget {
+class OpenContainerSocialWrapper extends StatelessWidget {
   ContainerTransitionType get _transitionType => ContainerTransitionType.fade;
 
   final OpenContainerBuilder? closedBuilder;
   final ClosedCallback<bool?>? onClosed;
   final SocialUser? socialUser;
-  const OpenContainerSocailWrapper({
+  const OpenContainerSocialWrapper({
     Key? key,
     this.closedBuilder,
     this.onClosed,
