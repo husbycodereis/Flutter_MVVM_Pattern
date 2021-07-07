@@ -30,5 +30,39 @@
         "search": "Search",
         "findFriends": "Find Friends",
         "following": "Follow"
+    },
+    "game":{
+        "title":"Unity Game",
+        "newUpdate":"New Updated Games",
+        "viewAll":"View All",
+        "topDownload":"Top Downloads",
+        "tabbar":{
+            "tab1":"RACING",
+            "tab2":"SIMULATION",
+            "tab3":"CASUAL",
+            "tab4":"CARTOONY",
+            "tab5":"TOYS"
+        }
+    },
+    "burgers":{
+        "favoriteProducts":"Best \nSelling",
+        "normalProducts":"Burgers"
+    },
+    "setting":{
+        "title":"Settings",
+        "about":{
+            "title":"About Project",
+            "contributions":"Project Contributors"
+        },
+        "core":{
+            "title":"Project Core",
+            "themeTitle":"Theme Change",
+            "themeDes":"You can change application theme.",
+            "langTitle":"Language Change",
+            "langDesc":"You can change application language."
+        },
+        "exit":"Exit",
+        "applicationTour":"Application Tour"
+
     }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../extensions/string_extensions.dart';
+import 'package:folder_architecture/core/extensions/string_extensions.dart';
 
 class LocaleText extends StatelessWidget {
   final String text;
@@ -13,7 +13,7 @@ class LocaleText extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     return Text(
       text.locale,
       style: style,

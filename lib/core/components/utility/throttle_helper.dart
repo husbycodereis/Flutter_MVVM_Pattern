@@ -1,11 +1,11 @@
 import 'dart:async';
 
-class ThrottleStingHelper {
+class ThrottleStringHelper {
   String? _previousText;
 
   final int _maxTimerValue = 5;
   int _timerValue = 0;
-  ThrottleStingHelper() {
+  ThrottleStringHelper() {
     _setMaxValue();
   }
 

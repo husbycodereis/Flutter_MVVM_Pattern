@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../extensions/context_extensions.dart';
+import '../../../extensions/context_extensions.dart';
 
 class IndicatorListView extends StatefulWidget {
   final int itemCount;

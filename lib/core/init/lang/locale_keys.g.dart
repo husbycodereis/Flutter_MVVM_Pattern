@@ -27,5 +27,32 @@ abstract class  LocaleKeys {
   static const social_findFriends = 'social.findFriends';
   static const social_following = 'social.following';
   static const social = 'social';
+  static const game_title = 'game.title';
+  static const game_newUpdate = 'game.newUpdate';
+  static const game_viewAll = 'game.viewAll';
+  static const game_topDownload = 'game.topDownload';
+  static const game_tabbar_tab1 = 'game.tabbar.tab1';
+  static const game_tabbar_tab2 = 'game.tabbar.tab2';
+  static const game_tabbar_tab3 = 'game.tabbar.tab3';
+  static const game_tabbar_tab4 = 'game.tabbar.tab4';
+  static const game_tabbar_tab5 = 'game.tabbar.tab5';
+  static const game_tabbar = 'game.tabbar';
+  static const game = 'game';
+  static const burgers_favoriteProducts = 'burgers.favoriteProducts';
+  static const burgers_normalProducts = 'burgers.normalProducts';
+  static const burgers = 'burgers';
+  static const setting_title = 'setting.title';
+  static const setting_about_title = 'setting.about.title';
+  static const setting_about_contributions = 'setting.about.contributions';
+  static const setting_about = 'setting.about';
+  static const setting_core_title = 'setting.core.title';
+  static const setting_core_themeTitle = 'setting.core.themeTitle';
+  static const setting_core_themeDes = 'setting.core.themeDes';
+  static const setting_core_langTitle = 'setting.core.langTitle';
+  static const setting_core_langDesc = 'setting.core.langDesc';
+  static const setting_core = 'setting.core';
+  static const setting_exit = 'setting.exit';
+  static const setting_applicationTour = 'setting.applicationTour';
+  static const setting = 'setting';
 
 }

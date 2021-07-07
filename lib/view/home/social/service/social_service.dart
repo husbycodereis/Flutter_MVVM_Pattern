@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/view/_product/_models/query/user_query.dart';
-import 'package:folder_architecture/view/_product/_models/query/user_query_enum.dart';
-import 'package:folder_architecture/view/_product/_utility/service_helper.dart';
-import 'package:folder_architecture/view/_product/enum/network_route_enum.dart';
+import 'package:folder_architecture/core/components/models/query/user_query.dart';
+import 'package:folder_architecture/core/components/models/query/user_query_enum.dart';
+import 'package:folder_architecture/core/components/utility/service_helper.dart';
+import 'package:folder_architecture/core/constants/enums/network_route_enum.dart';
 import 'package:folder_architecture/view/home/social/model/social_user_model.dart';
 import 'package:folder_architecture/view/home/social/service/ISocialService.dart';
 import 'package:vexana/vexana.dart';

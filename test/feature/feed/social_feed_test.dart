@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:folder_architecture/view/_product/_models/query/user_query.dart';
+import 'package:folder_architecture/core/components/models/query/user_query.dart';
 import 'package:mockito/mockito.dart';
 import 'package:vexana/vexana.dart';
 

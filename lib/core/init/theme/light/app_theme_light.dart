@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'app_theme.dart';
-import 'light/theme_interface_light.dart';
+import '../app_theme.dart';
+import 'theme_interface_light.dart';
 
 class AppThemeLight extends AppTheme with ILightTheme {
   static AppThemeLight? _instance;
@@ -19,6 +18,8 @@ class AppThemeLight extends AppTheme with ILightTheme {
       scaffoldBackgroundColor: colorThemeLight!.lightGrey,
       inputDecorationTheme: inputDecorationTheme(),
       appBarTheme: appBarTheme(),
+      iconTheme: iconTheme(),
+      tabBarTheme: tabBarTheme(),
       textTheme: textTheme());
 
   InputDecorationTheme inputDecorationTheme() {
@@ -31,17 +32,24 @@ class AppThemeLight extends AppTheme with ILightTheme {
     );
   }
 
-  AppBarTheme appBarTheme() => AppBarTheme(color: colorThemeLight!.colorScheme.primary);
+  AppBarTheme appBarTheme() => AppBarTheme(color: colorThemeLight!.colorScheme.primary, iconTheme: iconTheme());
 
-  TextTheme textTheme() {
-    return TextTheme(
-      headline1: textThemeLight!.headline1,
-      headline2: textThemeLight!.headline2,
-      headline3: textThemeLight!.headline3,
-      headline4: textThemeLight!.headline4,
-      bodyText1: textThemeLight!.bodyText1,
-      bodyText2: textThemeLight!.bodyText2,
-      overline: textThemeLight!.overline,
-    );
-  }
+  IconThemeData iconTheme() => IconThemeData(color: colorThemeLight!.black);
+
+  TabBarTheme tabBarTheme() => TabBarTheme(
+      labelColor: colorThemeLight!.orange,
+      labelStyle: textThemeLight!.bodyText1,
+      unselectedLabelStyle: textThemeLight!.bodyText2,
+      unselectedLabelColor: colorThemeLight!.darkGrey,
+      indicator: BoxDecoration(border: Border(bottom: BorderSide(width: 2, color: colorThemeLight!.orange))));
+
+  TextTheme textTheme() => TextTheme(
+        headline1: textThemeLight!.headline1,
+        headline2: textThemeLight!.headline2,
+        headline3: textThemeLight!.headline3,
+        headline4: textThemeLight!.headline4,
+        bodyText1: textThemeLight!.bodyText1,
+        bodyText2: textThemeLight!.bodyText2,
+        overline: textThemeLight!.overline,
+      );
 }

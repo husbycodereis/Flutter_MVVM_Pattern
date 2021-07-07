@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:folder_architecture/core/components/widgets/cards/not_found_navigation.dart';
 import 'package:folder_architecture/view/authentication/onboard/view/on_board_view.dart';
 import 'package:folder_architecture/view/home/social/view/social_view.dart';
 
 import '../../../view/authentication/login/view/login_view.dart';
-import '../../components/cards/not_found_navigation.dart';
 import '../../constants/navigation/navigation_constants.dart';
 
 class NavigationRoute {

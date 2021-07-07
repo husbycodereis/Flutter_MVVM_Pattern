@@ -1,8 +1,8 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:folder_architecture/view/home/social/model/social_user_model.dart';
 import 'package:folder_architecture/view/home/social/view/social_view_detail.dart';
 
-import '../../../home/social/model/social_user_model.dart';
 
 class OpenContainerSocialWrapper extends StatelessWidget {
   ContainerTransitionType get _transitionType => ContainerTransitionType.fade;
