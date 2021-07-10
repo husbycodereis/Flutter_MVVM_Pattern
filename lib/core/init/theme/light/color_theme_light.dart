@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ColorThemeLight {
   static ColorThemeLight? _instance;
   static ColorThemeLight? get instance {
@@ -21,14 +20,14 @@ class ColorThemeLight {
   final Color yellow = const Color(0xffEBBC36);
 
   ColorScheme get colorScheme => ColorScheme(
-      primary: red, //xx
+      primary: orange, //xx
       primaryVariant: red,
-      secondary: azure, //xx
+      secondary: red, //xx
       secondaryVariant: orange, //xx
       surface: yellow,
       background: lightGrey, //xx
       error: Colors.red[900]!,
-      onPrimary: Colors.greenAccent,
+      onPrimary: lightGrey, //changes the color of text inside elevated button
       onSecondary: Colors.black,
       onSurface: Colors.white30,
       onBackground: grey,

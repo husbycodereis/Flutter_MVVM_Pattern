@@ -20,7 +20,8 @@ class AppThemeLight extends AppTheme with ILightTheme {
       appBarTheme: appBarTheme(),
       iconTheme: iconTheme(),
       tabBarTheme: tabBarTheme(),
-      textTheme: textTheme());
+      textTheme: textTheme(),
+      );
 
   InputDecorationTheme inputDecorationTheme() {
     return InputDecorationTheme(

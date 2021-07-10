@@ -23,6 +23,7 @@ dependencies:
   mockito: ^5.0.10
   provider: ^5.0.0
   shared_preferences: ^2.0.6
+  shimmer: ^2.0.0
   vexana: ^2.2.1
 
 dev_dependencies:
