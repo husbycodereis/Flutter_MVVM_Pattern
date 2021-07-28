@@ -31,7 +31,6 @@ class SocialService extends ISocialService with ServiceHelper {
 
   @override
   Future<List<SocialUser>> fetchUserNameQuery(String text) {
-    // TODO: implement fetchUserNameQuery
     throw UnimplementedError();
   }
 }

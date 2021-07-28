@@ -44,6 +44,7 @@ abstract class  LocaleKeys {
   static const setting_title = 'setting.title';
   static const setting_about_title = 'setting.about.title';
   static const setting_about_contributions = 'setting.about.contributions';
+  static const setting_about_home = 'setting.about.home';
   static const setting_about = 'setting.about';
   static const setting_core_title = 'setting.core.title';
   static const setting_core_themeTitle = 'setting.core.themeTitle';

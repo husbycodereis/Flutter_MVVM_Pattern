@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/view/home/game/view/game_view.dart';
+import 'package:folder_architecture/view/settings/view/settings_view.dart';
 import 'package:provider/provider.dart';
 
 import 'core/constants/app/app_constants.dart';
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       builder: (context, themeNotifier, onBoardNotifier, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Boilerplate Application',
-        theme:   Provider.of<ThemeNotifier>(context, listen: false).currentTheme,
+        theme: context.watch<ThemeNotifier>().currentTheme,
         navigatorKey: NavigationService.instance.navigatorKey,
         onGenerateRoute: NavigationRoute.instance.generateRoute,
         localizationsDelegates: context.localizationDelegates,
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
         home:
 
             //TODO: change it back to LoginView
-            onBoardNotifier.isOnBoardViewed ? const GameView() : const OnBoardView(),
+            onBoardNotifier.isOnBoardViewed ? const SettingsView() : const OnBoardView(),
       ),
     );
   }

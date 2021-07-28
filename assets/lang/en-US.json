@@ -51,13 +51,14 @@
     "setting":{
         "title":"Settings",
         "about":{
-            "title":"About Project",
-            "contributions":"Project Contributors"
+            "title":"About The Project",
+            "contributions":"Project Contributors",
+            "home": "Home Page"
         },
         "core":{
             "title":"Project Core",
-            "themeTitle":"Theme Change",
-            "themeDes":"You can change application theme.",
+            "themeTitle":"Change Theme",
+            "themeDes":"Tap to change theme of the application.",
             "langTitle":"Language Change",
             "langDesc":"You can change application language."
         },
