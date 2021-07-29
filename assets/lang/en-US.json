@@ -59,8 +59,8 @@
             "title":"Project Core",
             "themeTitle":"Change Theme",
             "themeDes":"Tap to change theme of the application.",
-            "langTitle":"Language Change",
-            "langDesc":"You can change application language."
+            "langTitle":"Change Language",
+            "langDesc":"You can change the application language."
         },
         "exit":"Exit",
         "applicationTour":"Application Tour"

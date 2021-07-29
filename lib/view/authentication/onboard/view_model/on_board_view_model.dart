@@ -62,9 +62,13 @@ abstract class _OnBoardViewModelBase with Store, BaseViewModel {
   Future<void> completeOnBoard() async {
     changeLoading();
     await localeManager.setBoolValue(SharedPrefKeys.IS_FIRST_LOAD, value: true);
-    await navigation.navigateToPageClear(
-      path: NavigationConstants.LOGIN_VIEW,
-    );
+    if (navigation.navigatorKey.currentState!.canPop()) {
+      await navigation.pop();
+    } else {
+      await navigation.navigateToPageClear(
+        path: NavigationConstants.LOGIN_VIEW,
+      );
+    }
     changeLoading();
   }
 }

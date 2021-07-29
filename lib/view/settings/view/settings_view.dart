@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:folder_architecture/core/base/view/base_view.dart';
 import 'package:folder_architecture/core/constants/enums/lottie_path_enum.dart';
 import 'package:folder_architecture/core/extensions/context_extensions.dart';
 import 'package:folder_architecture/core/extensions/string_extensions.dart';
 import 'package:folder_architecture/core/extensions/widget_extensions.dart';
+import 'package:folder_architecture/core/init/lang/language_manager.dart';
 import 'package:folder_architecture/core/init/lang/locale_keys.g.dart';
 import 'package:folder_architecture/core/init/notifier/theme_notifier.dart';
 import 'package:folder_architecture/core/init/theme/light/app_theme_light.dart';
@@ -22,26 +24,120 @@ class SettingsView extends StatelessWidget {
           model.init();
         },
         onPageBuilder: (BuildContext context, SettingsViewModel viewModel) => Scaffold(
-              body: CustomScrollView(
-                slivers: [
-                  buildSliverAppBar(context),
-                  buildCardUser(context, viewModel).toSliver,
-                  context.sizedBoxLowVertical.toSliver,
-                  buildCardHeader(context, viewModel, title: 'absdf', children: [
-                    ListTile(
-                      title: Text(LocaleKeys.setting_core_themeTitle.locale),
-                      trailing: IconButton(
-                          onPressed: viewModel.changeAppTheme,
-                          icon: context.watch<ThemeNotifier>().currentTheme == AppThemeLight.instance.theme
-                              ? LottiePathEnum.SUN.toWidget
-                              : LottiePathEnum.MOON.toWidget),
-                      subtitle: Text(LocaleKeys.setting_core_themeDes.locale),
-                    )
-                  ]).toSliver,
-                  buildCardAbout(context, viewModel).toSliver,
-                ],
+              body: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CustomScrollView(
+                  slivers: [
+                    buildSliverAppBar(context),
+                    buildCardUser(context, viewModel).toSliver,
+                    context.sizedBoxLowVertical.toSliver,
+                    buildProjectCore(context, viewModel).toSliver,
+                    context.sizedBoxLowVertical.toSliver,
+                    buildOnBoardNavigationCard(viewModel).toSliver,
+                    context.sizedBoxLowVertical.toSliver,
+                    buildCardAbout(context, viewModel).toSliver,
+                    context.sizedBoxMediumVertical.toSliver,
+                    buildLogoutButton(context, viewModel).toSliver,
+                  ], 
+                ),
               ),
             ));
+  }
+
+  Card buildOnBoardNavigationCard(SettingsViewModel viewModel) {
+    return Card(
+      child: ListTile(
+        onTap: viewModel.navigateToOnboard,
+        title: Text(LocaleKeys.setting_applicationTour.locale),
+        trailing: const Icon(Icons.keyboard_arrow_right_outlined),
+      ),
+    );
+  }
+
+  Padding buildLogoutButton(BuildContext context, SettingsViewModel viewModel) {
+    return Padding(
+        padding: context.paddingLowAll * 0.4,
+        child: TextButton.icon(
+            style: TextButton.styleFrom(
+                backgroundColor: context.customColors.white,
+                shape: const StadiumBorder(),
+                padding: context.paddingNormalVertical),
+            onPressed: viewModel.logoutApp,
+            icon: const Icon(Icons.exit_to_app),
+            label: Text(LocaleKeys.setting_exit.locale)));
+  }
+
+  SliverAppBar buildSliverAppBar(BuildContext context) {
+    return SliverAppBar(
+      expandedHeight: 100,
+      elevation: 0,
+      pinned: true,
+      stretch: true,
+      flexibleSpace: FlexibleSpaceBar(
+          centerTitle: false,
+          title: Text(
+            LocaleKeys.setting_title.locale,
+            style: context.textTheme.headline5,
+          )),
+    );
+  }
+
+  Card buildCardUser(BuildContext context, SettingsViewModel viewModel) {
+    return Card(
+      child: SizedBox(
+        height: context.dynamicHeight(0.1),
+        child: Row(
+          children: [
+            Padding(
+              padding: context.paddingLowAll,
+              child: CircleAvatar(
+                child: Text(viewModel.userModel.shortName),
+              ),
+            ),
+            SizedBox(
+              width: context.lowValue,
+            ),
+            Text(viewModel.userModel.fullName)
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildProjectCore(BuildContext context, SettingsViewModel viewModel) {
+    return buildCardHeader(context, viewModel, title: LocaleKeys.setting_core_title.locale, children: [
+      ListTile(
+        title: Text(LocaleKeys.setting_core_themeTitle.locale),
+        trailing: IconButton(
+            onPressed: viewModel.changeAppTheme,
+            icon: context.watch<ThemeNotifier>().currentTheme == AppThemeLight.instance.theme
+                ? LottiePathEnum.SUN.toWidget
+                : LottiePathEnum.MOON.toWidget),
+        subtitle: Text(LocaleKeys.setting_core_themeDes.locale),
+      ),
+      ListTile(
+        title: Text(LocaleKeys.setting_core_langTitle.locale),
+        trailing: Observer(builder: (_) {
+          return DropdownButton<Locale>(
+            value: viewModel.appLocale,
+            onChanged: (value) {
+              viewModel.changeLanguage(value);
+            },
+            items: [
+              DropdownMenuItem(
+                value: LanguageManager.instance!.trLocale,
+                child: Text(LanguageManager.instance!.trLocale.languageCode.toUpperCase()),
+              ),
+              DropdownMenuItem(
+                value: LanguageManager.instance!.enLocale,
+                child: Text(LanguageManager.instance!.enLocale.languageCode.toUpperCase()),
+              )
+            ],
+          );
+        }),
+        subtitle: Text(LocaleKeys.setting_core_langDesc.locale),
+      )
+    ]);
   }
 
   Widget buildCardHeader(BuildContext context, SettingsViewModel viewModel,
@@ -81,28 +177,6 @@ class SettingsView extends StatelessWidget {
     ]);
   }
 
-  Card buildCardUser(BuildContext context, SettingsViewModel viewModel) {
-    return Card(
-      child: SizedBox(
-        height: context.dynamicHeight(0.1),
-        child: Row(
-          children: [
-            Padding(
-              padding: context.paddingLowAll,
-              child: CircleAvatar(
-                child: Text(viewModel.userModel.shortName),
-              ),
-            ),
-            SizedBox(
-              width: context.lowValue,
-            ),
-            Text(viewModel.userModel.fullName)
-          ],
-        ),
-      ),
-    );
-  }
-
   //alternative method for creating a sliver
   NestedScrollView buildNestedScrollView() {
     return NestedScrollView(
@@ -110,21 +184,6 @@ class SettingsView extends StatelessWidget {
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return [buildSliverAppBar(context)];
       },
-    );
-  }
-
-  SliverAppBar buildSliverAppBar(BuildContext context) {
-    return SliverAppBar(
-      expandedHeight: 200,
-      elevation: 0,
-      pinned: true,
-      stretch: true,
-      flexibleSpace: FlexibleSpaceBar(
-          centerTitle: false,
-          title: Text(
-            LocaleKeys.setting_title.locale,
-            style: context.textTheme.headline5,
-          )),
     );
   }
 }
