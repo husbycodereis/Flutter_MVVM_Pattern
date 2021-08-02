@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/extensions/future_extension.dart';
 import 'package:vexana/vexana.dart';
 
-import 'package:folder_architecture/core/init/network/vexana_manager.dart';
-import 'package:folder_architecture/view/home/social/model/social_user_model.dart';
-import 'package:folder_architecture/view/home/social/service/ISocialService.dart';
-import 'package:folder_architecture/view/home/social/service/social_service.dart';
+import '../../../../core/extensions/future_extension.dart';
+import '../../../../core/init/network/vexana_manager.dart';
+import '../model/social_user_model.dart';
+import '../service/ISocialService.dart';
+import '../service/social_service.dart';
 
 class SocialUserViewDetail extends StatelessWidget {
   final SocialUser socialUser;

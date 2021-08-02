@@ -26,6 +26,7 @@
     },
     "social": {
         "cancel": "İptal",
+        "navbar":"Sosyal",
         "next  ": "Sonraki",
         "search": "Arama",
         "findFriends": "Arkadaşları bul",
@@ -33,6 +34,7 @@
     },
     "game":{
         "title":"Birlik oyunu",
+        "navbar":"Oyunlar",
         "newUpdate":"Yeni Güncellenmiş Oyunlar",
         "viewAll":"Hepsini gör",
         "topDownload":"En iyi indirmeler",
@@ -50,6 +52,7 @@
     },
     "setting":{
         "title":"Ayarlar",
+        "navbar":"Ayarlar",
         "about":{
             "title":"Proje hakkında",
             "contributions":"Proje Katkıda Bulunanlar",

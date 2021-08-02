@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/extensions/future_extension.dart';
 import 'package:vexana/vexana.dart';
 
-import 'package:folder_architecture/core/init/network/vexana_manager.dart';
-import 'package:folder_architecture/view/home/game/model/game_model.dart';
-import 'package:folder_architecture/view/home/game/service/IGameService.dart';
-import 'package:folder_architecture/view/home/game/service/game_service.dart';
+import '../../../../core/extensions/future_extension.dart';
+import '../../../../core/init/network/vexana_manager.dart';
+import '../model/game_model.dart';
+import '../service/IGameService.dart';
+import '../service/game_service.dart';
 
 class GameViewDetails extends StatelessWidget {
   final GameModel gameModel;

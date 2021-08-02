@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/components/exceptions/navigate_model_exception.dart';
-import 'package:folder_architecture/core/components/widgets/cards/not_found_navigation.dart';
-import 'package:folder_architecture/view/authentication/onboard/view/on_board_view.dart';
-import 'package:folder_architecture/view/home/social/view/social_view.dart';
-import 'package:folder_architecture/view/settings/model/settings_dynamic_model.dart';
-import 'package:folder_architecture/view/settings/view/subview/settings_dynamic_view.dart';
 
 import '../../../view/authentication/login/view/login_view.dart';
+import '../../../view/authentication/onboard/view/on_board_view.dart';
+import '../../../view/home/home_view.dart';
+import '../../../view/home/social/view/social_view.dart';
+import '../../../view/settings/model/settings_dynamic_model.dart';
+import '../../../view/settings/view/subview/settings_dynamic_view.dart';
+import '../../components/exceptions/navigate_model_exception.dart';
+import '../../components/widgets/cards/not_found_navigation.dart';
 import '../../constants/navigation/navigation_constants.dart';
 
 class NavigationRoute {
@@ -19,6 +20,8 @@ class NavigationRoute {
     switch (args.name) {
       case NavigationConstants.LOGIN_VIEW:
         return normalNavigate(const LoginView());
+      case NavigationConstants.HOME:
+        return normalNavigate(const HomeView());
       case NavigationConstants.ON_BOARD:
         return normalNavigate(const OnBoardView());
       case NavigationConstants.SOCIAL_VIEW:

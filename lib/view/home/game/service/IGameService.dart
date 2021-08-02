@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/view/home/game/model/game_model.dart';
 import 'package:vexana/vexana.dart';
+
+import '../model/game_model.dart';
 
 abstract class IGameService {
   final INetworkManager manager;

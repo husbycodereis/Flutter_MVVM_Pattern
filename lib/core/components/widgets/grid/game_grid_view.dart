@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/components/widgets/animation/social_card_animation.dart';
-import 'package:folder_architecture/core/components/widgets/cards/game_card.dart';
 
-import 'package:folder_architecture/view/home/game/model/game_model.dart';
+import '../../../../view/home/game/model/game_model.dart';
+import '../animation/social_card_animation.dart';
+import '../cards/game_card.dart';
+
+
 
 class GameGrid extends StatelessWidget {
   final List<GameModel> models;

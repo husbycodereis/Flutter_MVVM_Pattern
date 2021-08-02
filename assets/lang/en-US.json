@@ -29,10 +29,12 @@
         "next  ": "Next",
         "search": "Search",
         "findFriends": "Find Friends",
-        "following": "Follow"
+        "following": "Follow",
+        "navbar": "Social"
     },
     "game":{
         "title":"Unity Game",
+        "navbar":"Game",
         "newUpdate":"New Updated Games",
         "viewAll":"View All",
         "topDownload":"Top Downloads",
@@ -50,6 +52,7 @@
     },
     "setting":{
         "title":"Settings",
+        "navbar":"Settings",
         "about":{
             "title":"About The Project",
             "contributions":"Project Contributors",

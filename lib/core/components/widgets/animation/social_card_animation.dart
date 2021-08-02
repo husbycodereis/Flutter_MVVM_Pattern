@@ -1,9 +1,9 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/view/home/game/model/game_model.dart';
-import 'package:folder_architecture/view/home/game/view/game_view_details.dart';
-import 'package:folder_architecture/view/home/social/model/social_user_model.dart';
-import 'package:folder_architecture/view/home/social/view/social_view_detail.dart';
+import '../../../../view/home/game/model/game_model.dart';
+import '../../../../view/home/game/view/game_view_details.dart';
+import '../../../../view/home/social/model/social_user_model.dart';
+import '../../../../view/home/social/view/social_view_detail.dart';
 
 
 class OpenContainerSocialWrapper extends StatelessWidget {

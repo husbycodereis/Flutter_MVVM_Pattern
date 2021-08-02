@@ -1,6 +1,5 @@
-import 'package:folder_architecture/core/init/theme/dark/text_theme_dark.dart';
-
 import 'color_theme_dark.dart';
+import 'text_theme_dark.dart';
 
 abstract class IDarkTheme {
   TextThemeDark? textThemeDark = TextThemeDark.instance;

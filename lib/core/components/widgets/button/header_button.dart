@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:folder_architecture/core/extensions/context_extensions.dart';
-import 'package:folder_architecture/core/extensions/string_extensions.dart';
-import 'package:folder_architecture/core/init/lang/locale_keys.g.dart';
+import '../../../extensions/context_extensions.dart';
+import '../../../extensions/string_extensions.dart';
+import '../../../init/lang/locale_keys.g.dart';
 
 class HeaderButton extends StatelessWidget {
   final String title;

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:folder_architecture/core/components/widgets/grid/game_grid_view.dart';
-import 'package:folder_architecture/core/extensions/future_extension.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../../core/base/view/base_view.dart';
 import '../../../../core/components/widgets/button/header_button.dart';
 import '../../../../core/components/widgets/cards/game_card.dart';
+import '../../../../core/components/widgets/grid/game_grid_view.dart';
 import '../../../../core/components/widgets/slider/image_slider.dart';
 import '../../../../core/extensions/context_extensions.dart';
+import '../../../../core/extensions/future_extension.dart';
 import '../../../../core/extensions/string_extensions.dart';
 import '../../../../core/init/lang/locale_keys.g.dart';
 import '../../../../core/init/network/vexana_manager.dart';

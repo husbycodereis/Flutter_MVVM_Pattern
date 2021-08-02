@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/extensions/context_extensions.dart';
+import '../../../extensions/context_extensions.dart';
 
 class ImageSlider extends StatefulWidget {
   const ImageSlider({Key? key}) : super(key: key);

@@ -1,13 +1,13 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/components/models/query/user_query.dart';
-import 'package:folder_architecture/core/components/utility/throttle_helper.dart';
 import 'package:mobx/mobx.dart';
 
-import 'package:folder_architecture/core/base/model/base_view_model.dart';
-import 'package:folder_architecture/view/home/social/model/social_user_model.dart';
-import 'package:folder_architecture/view/home/social/service/ISocialService.dart';
+import '../../../../core/base/model/base_view_model.dart';
+import '../../../../core/components/models/query/user_query.dart';
+import '../../../../core/components/utility/throttle_helper.dart';
+import '../model/social_user_model.dart';
+import '../service/ISocialService.dart';
 
 part 'social_view_model.g.dart';
 

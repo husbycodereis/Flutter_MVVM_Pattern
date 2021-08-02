@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:folder_architecture/core/base/view/base_view.dart';
-import 'package:folder_architecture/core/constants/enums/lottie_path_enum.dart';
-import 'package:folder_architecture/core/extensions/context_extensions.dart';
-import 'package:folder_architecture/core/extensions/string_extensions.dart';
-import 'package:folder_architecture/core/extensions/widget_extensions.dart';
-import 'package:folder_architecture/core/init/lang/language_manager.dart';
-import 'package:folder_architecture/core/init/lang/locale_keys.g.dart';
-import 'package:folder_architecture/core/init/notifier/theme_notifier.dart';
-import 'package:folder_architecture/core/init/theme/light/app_theme_light.dart';
-import 'package:folder_architecture/view/settings/viewmodel/settings_view_model.dart';
 import 'package:provider/provider.dart';
+
+import '../../../core/base/view/base_view.dart';
+import '../../../core/constants/enums/lottie_path_enum.dart';
+import '../../../core/extensions/context_extensions.dart';
+import '../../../core/extensions/string_extensions.dart';
+import '../../../core/extensions/widget_extensions.dart';
+import '../../../core/init/lang/language_manager.dart';
+import '../../../core/init/lang/locale_keys.g.dart';
+import '../../../core/init/notifier/theme_notifier.dart';
+import '../../../core/init/theme/light/app_theme_light.dart';
+import '../viewmodel/settings_view_model.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({Key? key}) : super(key: key);
@@ -38,7 +39,7 @@ class SettingsView extends StatelessWidget {
                     buildCardAbout(context, viewModel).toSliver,
                     context.sizedBoxMediumVertical.toSliver,
                     buildLogoutButton(context, viewModel).toSliver,
-                  ], 
+                  ],
                 ),
               ),
             ));
@@ -91,7 +92,7 @@ class SettingsView extends StatelessWidget {
             Padding(
               padding: context.paddingLowAll,
               child: CircleAvatar(
-                child: Text(viewModel.userModel.shortName),
+                child: Image.network(''.customProfileImage),
               ),
             ),
             SizedBox(

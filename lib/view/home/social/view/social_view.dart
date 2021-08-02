@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:folder_architecture/core/components/widgets/animation/social_card_animation.dart';
-import 'package:folder_architecture/core/components/widgets/list-tile/friends_card.dart';
-import 'package:folder_architecture/core/extensions/context_extensions.dart';
-import 'package:folder_architecture/core/extensions/string_extensions.dart';
-import 'package:folder_architecture/core/init/lang/locale_keys.g.dart';
-import 'package:folder_architecture/core/init/network/vexana_manager.dart';
-import 'package:folder_architecture/view/home/social/service/social_service.dart';
 
 import '../../../../core/base/view/base_view.dart';
+import '../../../../core/components/widgets/animation/social_card_animation.dart';
+import '../../../../core/components/widgets/list-tile/friends_card.dart';
+import '../../../../core/extensions/context_extensions.dart';
+import '../../../../core/extensions/string_extensions.dart';
+import '../../../../core/init/lang/locale_keys.g.dart';
+import '../../../../core/init/network/vexana_manager.dart';
+import '../service/social_service.dart';
 import '../viewmodel/social_view_model.dart';
 
 class SocialView extends StatelessWidget {

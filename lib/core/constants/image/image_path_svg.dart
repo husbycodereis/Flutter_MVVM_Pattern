@@ -1,6 +1,6 @@
 
 
-import 'package:folder_architecture/core/extensions/string_extensions.dart';
+import '../../extensions/string_extensions.dart';
 
 class SVGImagePaths {
   static SVGImagePaths? _instance;

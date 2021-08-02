@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:folder_architecture/core/components/utility/service_helper.dart';
-import 'package:folder_architecture/core/constants/enums/network_route_enum.dart';
 import 'package:vexana/vexana.dart';
 
-
+import '../../../../core/components/utility/service_helper.dart';
+import '../../../../core/constants/enums/network_route_enum.dart';
 import '../model/login_model.dart';
 import '../model/login_response_model.dart';
 import 'ILoginService.dart';

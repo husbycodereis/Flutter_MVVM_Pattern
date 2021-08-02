@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:folder_architecture/core/extensions/context_extensions.dart';
-import 'package:folder_architecture/core/extensions/string_extensions.dart';
-import 'package:folder_architecture/core/init/lang/locale_keys.g.dart';
-import 'package:folder_architecture/view/home/social/model/social_user_model.dart';
+import '../../../../view/home/social/model/social_user_model.dart';
+import '../../../extensions/context_extensions.dart';
+import '../../../extensions/string_extensions.dart';
+import '../../../init/lang/locale_keys.g.dart';
 
 class FriendsCard extends StatelessWidget {
   final SocialUser user;

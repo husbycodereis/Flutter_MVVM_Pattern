@@ -15,13 +15,14 @@ class AppThemeLight extends AppTheme with ILightTheme {
       fontFamily: '',
       colorScheme: colorThemeLight!.colorScheme,
       primaryColor: colorThemeLight!.azure, //changes the color of focused label text in textfield
+      backgroundColor: colorThemeLight!.lightGrey,
       scaffoldBackgroundColor: colorThemeLight!.lightGrey,
       inputDecorationTheme: inputDecorationTheme(),
       appBarTheme: appBarTheme(),
       iconTheme: iconTheme(),
       tabBarTheme: tabBarTheme(),
       textTheme: textTheme(),
-      );
+      bottomNavigationBarTheme: bottomNavigationBarTheme());
 
   InputDecorationTheme inputDecorationTheme() {
     return InputDecorationTheme(
@@ -53,4 +54,7 @@ class AppThemeLight extends AppTheme with ILightTheme {
         bodyText2: textThemeLight!.bodyText2,
         overline: textThemeLight!.overline,
       );
+
+  BottomNavigationBarThemeData bottomNavigationBarTheme() => BottomNavigationBarThemeData(
+      backgroundColor: colorThemeLight!.lightGrey, selectedItemColor: colorThemeLight!.orange);
 }

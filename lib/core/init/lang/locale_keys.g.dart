@@ -22,12 +22,14 @@ abstract class  LocaleKeys {
   static const login_sign = 'login.sign';
   static const login = 'login';
   static const social_cancel = 'social.cancel';
+  static const social_navbar = 'social.navbar';
   static const social_next   = 'social.next  ';
   static const social_search = 'social.search';
   static const social_findFriends = 'social.findFriends';
   static const social_following = 'social.following';
   static const social = 'social';
   static const game_title = 'game.title';
+  static const game_navbar = 'game.navbar';
   static const game_newUpdate = 'game.newUpdate';
   static const game_viewAll = 'game.viewAll';
   static const game_topDownload = 'game.topDownload';
@@ -42,6 +44,7 @@ abstract class  LocaleKeys {
   static const burgers_normalProducts = 'burgers.normalProducts';
   static const burgers = 'burgers';
   static const setting_title = 'setting.title';
+  static const setting_navbar = 'setting.navbar';
   static const setting_about_title = 'setting.about.title';
   static const setting_about_contributions = 'setting.about.contributions';
   static const setting_about_home = 'setting.about.home';
