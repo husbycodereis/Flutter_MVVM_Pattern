@@ -13,8 +13,15 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   int pageIndex = 0;
-  final PageController _pageController = PageController();
-  final List<Widget> _viewList = HomeScreenConstantsEnum.values.map((e) => e.rawValue).toList();
+  late final PageController _pageController;
+  late final List<Widget> _viewList;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+    _viewList = HomeScreenConstantsEnum.values.map((e) => e.rawValue).toList();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +52,13 @@ class _HomeViewState extends State<HomeView> {
         items: _bottomNavigationItems);
   }
 
+  void _onItemTapped(int selectedIndex) {
+    _pageController.jumpToPage(selectedIndex);
+    setState(() {
+      pageIndex = selectedIndex;
+    });
+  }
+
   final List<BottomNavigationBarItem> _bottomNavigationItems = [
     BottomNavigationBarItem(
       icon: const Icon(Icons.games),
@@ -59,13 +73,6 @@ class _HomeViewState extends State<HomeView> {
       label: LocaleKeys.setting_navbar.locale,
     ),
   ];
-
-  void _onItemTapped(int selectedIndex) {
-    _pageController.jumpToPage(selectedIndex);
-    setState(() {
-      pageIndex = selectedIndex;
-    });
-  }
 
   @override
   void dispose() {

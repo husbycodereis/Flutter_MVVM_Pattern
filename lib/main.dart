@@ -8,12 +8,9 @@ import 'core/init/cache/locale_manager.dart';
 import 'core/init/lang/language_manager.dart';
 import 'core/init/navigation/navigation_routes.dart';
 import 'core/init/navigation/navigation_service.dart';
-import 'core/init/notifier/on_board_notifier.dart';
 import 'core/init/notifier/provider_list.dart';
 import 'core/init/notifier/theme_notifier.dart';
-import 'view/authentication/login/view/login_view.dart';
-import 'view/authentication/onboard/view/on_board_view.dart';
-import 'view/home/home_view.dart';
+
 
 Future main() async {
   await _init();
@@ -32,8 +29,8 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Consumer2<ThemeNotifier, OnBoardAndLoginNotifier>(
-      builder: (context, themeNotifier, onBoardandLoginNotifier, child) => MaterialApp(
+    return Consumer<ThemeNotifier>(
+      builder: (context, themeNotifier, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Boilerplate Application',
         theme: context.watch<ThemeNotifier>().currentTheme,
@@ -42,11 +39,6 @@ class MyApp extends StatelessWidget {
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,
-        home: onBoardandLoginNotifier.isOnBoardViewed
-            ? onBoardandLoginNotifier.isLoggedIn
-                ? const HomeView()
-                : const LoginView()
-            : const OnBoardView(),
       ),
     );
   }

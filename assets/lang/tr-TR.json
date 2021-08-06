@@ -26,47 +26,49 @@
     },
     "social": {
         "cancel": "İptal",
-        "navbar":"Sosyal",
+        "navbar": "Sosyal",
         "next  ": "Sonraki",
         "search": "Arama",
         "findFriends": "Arkadaşları bul",
         "following": "Takip et"
     },
-    "game":{
-        "title":"Birlik oyunu",
-        "navbar":"Oyunlar",
-        "newUpdate":"Yeni Güncellenmiş Oyunlar",
-        "viewAll":"Hepsini gör",
-        "topDownload":"En iyi indirmeler",
-        "tabbar":{
-            "tab1":"YARIŞMA",
-            "tab2":"Simülasyon",
-            "tab3":"GÜNDELİK",
-            "tab4":"Karikatüry",
-            "tab5":"Oyuncaklar"
+    "game": {
+        "title": "Birlik oyunu",
+        "navbar": "Oyunlar",
+        "newUpdate": "Yeni Güncellenmiş Oyunlar",
+        "viewAll": "Hepsini gör",
+        "topDownload": "En iyi indirmeler",
+        "tabbar": {
+            "tab1": "YARIŞMA",
+            "tab2": "Simülasyon",
+            "tab3": "GÜNDELİK",
+            "tab4": "Karikatüry",
+            "tab5": "Oyuncaklar"
         }
     },
-    "burgers":{
-        "favoriteProducts":"Cok \nSatanlar",
-        "normalProducts":"Burger"
+    "burgers": {
+        "favoriteProducts": "Cok \nSatanlar",
+        "normalProducts": "Burger"
     },
-    "setting":{
-        "title":"Ayarlar",
-        "navbar":"Ayarlar",
-        "about":{
-            "title":"Proje hakkında",
-            "contributions":"Proje Katkıda Bulunanlar",
+    "setting": {
+        "title": "Ayarlar",
+        "navbar": "Ayarlar",
+        "about": {
+            "title": "Proje hakkında",
+            "contributions": "Proje Katkıda Bulunanlar",
             "home": "Ana sayfa"
         },
-        "core":{
-            "title":"Proje Çekirdeği",
-            "themeTitle":"Temayı değiştir",
-            "themeDes":"Uygulamanın temasını değiştirmek için dokunun.",
-            "langTitle":"Dili değiştir",
-            "langDesc":"Uygulama dilini değiştirebilirsiniz."
+        "core": {
+            "title": "Proje Çekirdeği",
+            "themeTitle": "Temayı değiştir",
+            "themeDes": "Uygulamanın temasını değiştirmek için dokunun.",
+            "langTitle": "Dili değiştir",
+            "langDesc": "Uygulama dilini değiştirebilirsiniz."
         },
-        "exit":"Exit",
-        "applicationTour":"Uygulama Turu"
-
+        "splash": {
+            "welcome": "The MVVM pattern showcase project"
+        },
+        "exit": "Exit",
+        "applicationTour": "Uygulama Turu"
     }
 }

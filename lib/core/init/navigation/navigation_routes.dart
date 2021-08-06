@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:folder_architecture/view/authentication/splash/view/splash_view.dart';
 
 import '../../../view/authentication/login/view/login_view.dart';
 import '../../../view/authentication/onboard/view/on_board_view.dart';
@@ -18,6 +19,8 @@ class NavigationRoute {
 
   Route<dynamic> generateRoute(RouteSettings args) {
     switch (args.name) {
+      case NavigationConstants.DEFAULT:
+        return normalNavigate(const SplashView());
       case NavigationConstants.LOGIN_VIEW:
         return normalNavigate(const LoginView());
       case NavigationConstants.HOME:

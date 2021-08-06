@@ -65,6 +65,10 @@
             "langTitle":"Change Language",
             "langDesc":"You can change the application language."
         },
+        "splash":{
+            "welcome":"The MVVM pattern showcase project"
+            
+        },
         "exit":"Exit",
         "applicationTour":"Application Tour"
 

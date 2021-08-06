@@ -55,6 +55,8 @@ abstract class  LocaleKeys {
   static const setting_core_langTitle = 'setting.core.langTitle';
   static const setting_core_langDesc = 'setting.core.langDesc';
   static const setting_core = 'setting.core';
+  static const setting_splash_welcome = 'setting.splash.welcome';
+  static const setting_splash = 'setting.splash';
   static const setting_exit = 'setting.exit';
   static const setting_applicationTour = 'setting.applicationTour';
   static const setting = 'setting';

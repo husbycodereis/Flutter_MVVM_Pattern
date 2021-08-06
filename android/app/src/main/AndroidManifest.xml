@@ -2,7 +2,7 @@
     package="com.example.folder_architecture">
    <application
         android:label="folder_architecture"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@drawable/mvvm_circle">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
