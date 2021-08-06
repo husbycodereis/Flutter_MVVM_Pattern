@@ -1,25 +1,32 @@
-# folder_architecture
+# MVVM pattern project example
 
-This is the ongoing series about Flutter Folder Architecture in MVVM pattern that is prepared by Veli Bacik.
+This project is inspired by Veli Bacik's'Flutter Architecture Template' series and created to showcase MVVM architecture pattern in Flutter applications with MobX state management method.
 
-The project is created to code along and learn the advanced methods ranging from:
+The core features and use cases inside the project:
 
-* caching
-* networking
-* localization
-* theme
+* Caching
+* Network management
+* Localization
+* Theme
 * Navigation
+* Unit Testing
 * MobX State Management
-* extensions and their usage
+* Provider Package
+* Dependency Injection with Singleton Instances
+* Dart extensions
 * Atomic Design
-* folder structure
+* Folder structure
 * MVVM pattern principals
-* Example usage of the architecture
+* Splash Screen
+* Onboarding
+* Part - Part of 
+* Mixins 
 
 
-Please find the links to the course from below links.
+
+Please find the links to the series from below links.
 
 - [Youtube channel](https://www.youtube.com/watch?v=fGNXqZd-Als&list=PL1k5oWAuBhgV_XnhMSyu2YLZMZNGuD0Cv)
 - [Github link](https://github.com/VB10/flutter-architecture-template)
 
-All credit goes to original creator for preparing the course and the code base, this is only a work of practice.
+All credit goes to original creator for preparing the course, this is a work of a personal project.
