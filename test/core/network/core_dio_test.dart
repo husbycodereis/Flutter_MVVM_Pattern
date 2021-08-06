@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:folder_architecture/view/_product/_models/query/user_query_enum.dart';
+import 'package:folder_architecture/core/components/models/query/user_query_enum.dart';
 
 import 'package:vexana/vexana.dart';
 import 'dio_mock_model.dart';

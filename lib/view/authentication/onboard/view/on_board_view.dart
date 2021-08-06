@@ -3,9 +3,9 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/base/view/base_view.dart';
-import '../../../../core/components/text/locale_text.dart';
+import '../../../../core/components/widgets/avatar/on_board_circle.dart';
+import '../../../../core/components/widgets/text/locale_text.dart';
 import '../../../../core/extensions/context_extensions.dart';
-import '../../../_product/_widgets/avatar/on_board_circle.dart';
 import '../model/on_board_model.dart';
 import '../view_model/on_board_view_model.dart';
 
